@@ -7,21 +7,21 @@
 
 body {
 	font-family: 'Arial', sans-serif;
-	background-color: #f4f4f4;
-	color: #333;
+	background-color: #fef9f3; /* beige doux */
+	color: #4e342e; /* marron foncé */
 }
 
 header {
-	background-color: #fff;
+	background-color: #fff8ec;
 	padding: 20px;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	border-bottom: 1px solid #ccc;
+	border-bottom: 1px solid #e0c9a6;
 }
 
-header .logo h1 {
-	color: #2e8b57;
+.logo h1 {
+	color: #795548; /* marron chocolat */
 }
 
 nav ul {
@@ -32,48 +32,93 @@ nav ul {
 
 nav a {
 	text-decoration: none;
-	color: #333;
+	color: #4e342e;
 	font-weight: bold;
 }
 
 nav a:hover {
-	color: #2e8b57;
+	color: #a1887f;
+}
+
+.user-icon {
+	font-size: 0.9em;
+}
+
+.user-icon a {
+	margin-left: 5px;
+	text-decoration: none;
+	color: #4e342e;
+	font-weight: bold;
 }
 
 .hero {
 	text-align: center;
-	padding: 80px 20px;
-	background: linear-gradient(to right, #e6f4ea, #f4fff8);
+	padding: 100px 20px;
+	background: linear-gradient(to right, #fff6e0, #fef3dd);
 }
 
 .hero h2 {
-	font-size: 2em;
-	margin-bottom: 20px;
+	font-size: 2.5em;
+	margin-bottom: 10px;
 }
 
-.hero p {
+.cta-sub {
 	font-size: 1.2em;
 	margin-bottom: 30px;
 }
 
 .btn {
-	background-color: #2e8b57;
+	background-color: #a1887f;
 	color: #fff;
-	padding: 12px 25px;
+	padding: 12px 30px;
 	border-radius: 5px;
 	text-decoration: none;
 	font-weight: bold;
 }
 
 .btn:hover {
-	background-color: #246b45;
+	background-color: #8d6e63;
+}
+
+.phrases {
+	text-align: center;
+	margin: 50px 20px;
+	font-size: 1.1em;
+	line-height: 2;
+}
+
+.favorites {
+	background-color: #fff3e0;
+	padding: 40px 20px;
+	text-align: center;
+}
+
+.favorites h3 {
+	font-size: 1.6em;
+	margin-bottom: 20px;
+	color: #6d4c41;
+}
+
+.favorites ul {
+	list-style: none;
+	padding: 0;
+	font-size: 1em;
+}
+
+.favorites li {
+	margin: 10px 0;
 }
 
 footer {
+	background-color: #fff8ec;
 	text-align: center;
 	padding: 20px;
 	font-size: 0.9em;
-	background-color: #fff;
-	border-top: 1px solid #ccc;
-	margin-top: 40px;
+	border-top: 1px solid #e0c9a6;
+	margin-top: 50px;
+}
+
+footer a {
+	color: #6d4c41;
+	text-decoration: none;
 }
