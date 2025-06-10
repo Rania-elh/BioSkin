@@ -1,3 +1,11 @@
+:root {
+	--beige-light: #f5f0e1;
+	--beige-medium: #e6d5b8;
+	--brown-light: #c4a484;
+	--brown-medium: #8b7355;
+	--brown-dark: #5c4d3c;
+}
+
 /* Reset */
 * {
 	margin: 0;
@@ -6,38 +14,42 @@
 }
 
 body {
-	font-family: 'Arial', sans-serif;
-	background-color: #fef9f3; /* beige doux */
-	color: #4e342e; /* marron foncé */
+	font-family: 'Poppins', sans-serif;
+	background-color: var(--beige-light);
+	color: var(--brown-dark);
+	line-height: 1.6;
 }
 
 header {
-	background-color: #fff8ec;
-	padding: 20px;
+	background-color: white;
+	padding: 1rem 5%;
+	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	border-bottom: 1px solid #e0c9a6;
 }
 
 .logo h1 {
-	color: #795548; /* marron chocolat */
+	color: var(--brown-medium);
+	font-size: 2rem;
+	font-weight: 700;
 }
 
 nav ul {
 	display: flex;
-	gap: 20px;
+	gap: 2rem;
 	list-style: none;
 }
 
 nav a {
+	color: var(--brown-medium);
 	text-decoration: none;
-	color: #4e342e;
-	font-weight: bold;
+	font-weight: 500;
+	transition: color 0.3s ease;
 }
 
 nav a:hover {
-	color: #a1887f;
+	color: var(--brown-dark);
 }
 
 .user-icon {
@@ -45,80 +57,163 @@ nav a:hover {
 }
 
 .user-icon a {
-	margin-left: 5px;
+	color: var(--brown-medium);
 	text-decoration: none;
-	color: #4e342e;
-	font-weight: bold;
 }
 
 .hero {
+	background: linear-gradient(rgba(228, 213, 184, 0.85), rgba(228, 213, 184, 0.85)),
+				url('Image/https://imgur.com/a/kaA8ZU6') center/cover no-repeat;
 	text-align: center;
-	padding: 100px 20px;
-	background: linear-gradient(to right, #fff6e0, #fef3dd);
+	padding: 5rem 2rem;
+	margin: 2rem 5%;
+	border-radius: 15px;
+	box-shadow: 0 4px 24px rgba(140, 110, 80, 0.08);
 }
 
 .hero h2 {
-	font-size: 2.5em;
-	margin-bottom: 10px;
+	color: var(--brown-dark);
+	font-size: 2.5rem;
+	margin-bottom: 1rem;
 }
 
 .cta-sub {
-	font-size: 1.2em;
-	margin-bottom: 30px;
+	color: var(--brown-medium);
+	font-size: 1.2rem;
+	margin-bottom: 2rem;
 }
 
 .btn {
-	background-color: #a1887f;
-	color: #fff;
-	padding: 12px 30px;
-	border-radius: 5px;
+	display: inline-block;
+	background-color: var(--brown-medium);
+	color: white;
+	padding: 1rem 2rem;
+	border-radius: 30px;
 	text-decoration: none;
-	font-weight: bold;
+	transition: background-color 0.3s ease;
 }
 
 .btn:hover {
-	background-color: #8d6e63;
+	background-color: var(--brown-dark);
 }
 
 .phrases {
 	text-align: center;
-	margin: 50px 20px;
-	font-size: 1.1em;
-	line-height: 2;
+	padding: 3rem 5%;
+	background-color: var(--beige-medium);
+}
+
+.phrases p {
+	margin: 1rem 0;
+	font-size: 1.2rem;
+	color: var(--brown-dark);
+}
+
+@keyframes scroll {
+	0% {
+		transform: translateX(0);
+	}
+	100% {
+		transform: translateX(calc(-250px * 5 - 20px * 5)); /* 5 recettes + 5 espaces */
+	}
 }
 
 .favorites {
-	background-color: #fff3e0;
-	padding: 40px 20px;
-	text-align: center;
+	padding: 3rem 5%;
+	background-color: white;
+	overflow: hidden;
+	position: relative;
 }
 
 .favorites h3 {
-	font-size: 1.6em;
-	margin-bottom: 20px;
-	color: #6d4c41;
+	color: var(--brown-medium);
+	text-align: center;
+	margin-bottom: 2rem;
+	position: sticky;
+	top: 0;
+	z-index: 2;
+	background-color: white;
+	padding: 1rem 0;
 }
 
 .favorites ul {
 	list-style: none;
+	display: flex;
 	padding: 0;
-	font-size: 1em;
+	width: max-content;
+	gap: 20px;
+	animation: scroll 30s linear infinite;
 }
 
 .favorites li {
-	margin: 10px 0;
+	background-color: var(--beige-light);
+	padding: 1.5rem;
+	text-align: center;
+	transition: transform 0.3s ease;
+	min-width: 250px;
+	flex-shrink: 0;
+	border-radius: 10px;
+}
+
+.favorites li:hover {
+	transform: translateY(-5px);
+	background-color: var(--beige-medium);
+	animation-play-state: paused;
+}
+
+/* Ajout d'un effet de fondu sur les bords */
+.favorites::before,
+.favorites::after {
+	content: '';
+	position: absolute;
+	top: 0;
+	width: 100px;
+	height: 100%;
+	z-index: 1;
+	pointer-events: none;
+}
+
+.favorites::before {
+	left: 0;
+	background: linear-gradient(to right, white, transparent);
+}
+
+.favorites::after {
+	right: 0;
+	background: linear-gradient(to left, white, transparent);
 }
 
 footer {
-	background-color: #fff8ec;
+	background-color: var(--brown-dark);
+	color: var(--beige-light);
+	padding: 2rem 5%;
 	text-align: center;
-	padding: 20px;
-	font-size: 0.9em;
-	border-top: 1px solid #e0c9a6;
-	margin-top: 50px;
 }
 
-footer a {
-	color: #6d4c41;
+.footer-links {
+	margin-bottom: 1rem;
+}
+
+.footer-links a {
+	color: var(--beige-medium);
 	text-decoration: none;
+}
+
+.footer-links a:hover {
+	color: white;
+}
+
+@media (max-width: 768px) {
+	nav ul {
+		gap: 1rem;
+	}
+	
+	.hero {
+		margin: 1rem;
+		padding: 3rem 1rem;
+	}
+	
+	.favorites ul {
+		grid-template-columns: 1fr;
+	}
 }
