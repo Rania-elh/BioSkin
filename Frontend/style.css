@@ -282,10 +282,10 @@ footer {
 /* Login Page Styles */
 .login-container {
 	max-width: 400px;
-	margin: 50px auto;
-	padding: 30px;
+	margin: 80px auto;
+	padding: 50px;
 	background-color: #fff8ec;
-	border-radius: 10px;
+	border-radius: 20px;
 	box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
 }
 
@@ -352,6 +352,7 @@ footer {
 	text-decoration: underline;
 }
 }
+<<<<<<< HEAD
 
 /* Section Témoignages */
 .testimonials {
