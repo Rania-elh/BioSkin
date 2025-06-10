@@ -18,7 +18,7 @@
 				<ul>
 					<li><a href="index.html">Accueil</a></li>
 					<li><a href="creer-recette.html">Créer votre recette</a></li>
-					<li><a href="favoris.html">Recettes Favoris</a></li>
+					<li><a href="favoris.html">Favoris</a></li>
 				</ul>
 			</nav>
 			<div class="user-icon">
@@ -29,8 +29,7 @@
 		<main>
 			<section class="hero">
 				<h2>Créez votre propre recette</h2>
-				<p class="cta-sub">Recette sur mesure</p>
-				<a href="creer-recette.html" class="btn">Commencer</a>
+				<a href="creer-recette.html" class="btn">Trouver ma recette idéale</a>
 			</section>
 
 			<section class="phrases">
@@ -52,13 +51,85 @@
 					<li>Tonique apaisant à la rose</li>
 				</ul>
 			</section>
+
+			<section class="why-bioskin">
+				<h3>Pourquoi choisir BioSkin ?</h3>
+				<div class="features-grid">
+					<div class="feature-card">
+						<h4>Personnalisé</h4>
+						<p>Créez des soins adaptés à votre type de peau et à vos besoins spécifiques.</p>
+					</div>
+					<div class="feature-card">
+						<h4>Économique</h4>
+						<p>Réalisez des soins de qualité à moindre coût avec des ingrédients simples.</p>
+					</div>
+					<div class="feature-card">
+						<h4>Naturel</h4>
+						<p>Utilisez uniquement des ingrédients naturels, sans produits chimiques ni conservateurs.</p>
+					</div>
+					<div class="feature-card">
+						<h4>Écologique</h4>
+						<p>Réduisez votre impact environnemental en créant vos propres produits.</p>
+					</div>
+				</div>
+			</section>
+
+			<section class="testimonials">
+				<h3>Avis de nos utilisateurs</h3>
+				<div class="testimonials-grid">
+					<div class="testimonial-card">
+						<div class="rating">★★★★★</div>
+						<p class="testimonial-text">"Les recettes sont faciles à suivre et les résultats sont incroyables !"</p>
+						<p class="testimonial-author">- Assia L.</p>
+					</div>
+					<div class="testimonial-card">
+						<div class="rating">★★★★★</div>
+						<p class="testimonial-text">"Je suis ravie de pouvoir utiliser des produits 100% naturels. Je sais exactement ce que j'applique dessus."</p>
+						<p class="testimonial-author">- Dini E.</p>
+					</div>
+					<div class="testimonial-card">
+						<div class="rating">★★★★★</div>
+						<p class="testimonial-text">"L'application est intuitive et les recettes sont variées. J'ai pu créer des soins pour toute ma famille avec les ingrédients que j'avais déjà."</p>
+						<p class="testimonial-author">- Julie M.</p>
+					</div>
+				</div>
+			</section>
+
+			<section class="add-testimonial">
+				<h3>Partagez votre expérience</h3>
+				<form class="testimonial-form">
+					<div class="form-group">
+						<label for="name">Votre nom</label>
+						<input type="text" id="name" name="name" required>
+					</div>
+					<div class="form-group">
+						<label for="rating">Votre note</label>
+						<div class="star-rating">
+							<input type="radio" id="star5" name="rating" value="5" required>
+							<label for="star5">★</label>
+							<input type="radio" id="star4" name="rating" value="4">
+							<label for="star4">★</label>
+							<input type="radio" id="star3" name="rating" value="3">
+							<label for="star3">★</label>
+							<input type="radio" id="star2" name="rating" value="2">
+							<label for="star2">★</label>
+							<input type="radio" id="star1" name="rating" value="1">
+							<label for="star1">★</label>
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="testimonial">Votre avis</label>
+						<textarea id="testimonial" name="testimonial" rows="4" required placeholder="Partagez votre expérience avec BioSkin..."></textarea>
+					</div>
+					<button type="submit" class="btn">Envoyer mon avis</button>
+				</form>
+			</section>
+
 		</main>
 
 		<footer>
 			<div class="footer-links">
 				<p>Contact : <a href="mailto:contact@bioskin.com">contact@bioskin.com</a></p>
-				<p>Instagram : <a href="https://instagram.com/bioskin" target="_blank">@bioskin</a></p>
-				<p>Facebook : <a href="https://facebook.com/bioskin" target="_blank">facebook.com/bioskin</a></p>
 			</div>
 			<p>&copy; 2025 BioSkin. Tous droits réservés.</p>
 		</footer>
