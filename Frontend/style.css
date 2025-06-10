@@ -282,10 +282,10 @@ footer {
 /* Login Page Styles */
 .login-container {
 	max-width: 400px;
-	margin: 50px auto;
-	padding: 30px;
+	margin: 80px auto;
+	padding: 50px;
 	background-color: #fff8ec;
-	border-radius: 10px;
+	border-radius: 20px;
 	box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
 }
 
@@ -352,6 +352,7 @@ footer {
 	text-decoration: underline;
 }
 }
+<<<<<<< HEAD
 
 /* Section Témoignages */
 .testimonials {
@@ -612,6 +613,7 @@ footer {
 		padding: 1.5rem;
 	}
 }
+<<<<<<< HEAD
 
 /* Style de la page de création de recette */
 .recipe-creator {
@@ -1054,3 +1056,5 @@ footer {
 		height: 60px;
 	}
 }
+=======
+>>>>>>> 6dc08e5867d053c577f9e4daf639a3a3b5438218
