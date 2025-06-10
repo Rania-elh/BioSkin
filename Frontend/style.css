@@ -31,8 +31,9 @@ header {
 
 .logo h1 {
 	color: var(--brown-medium);
-	font-size: 2rem;
+	font-size: 2.2rem;
 	font-weight: 700;
+	letter-spacing: 1px;
 }
 
 nav ul {
@@ -46,10 +47,13 @@ nav a {
 	text-decoration: none;
 	font-weight: 500;
 	transition: color 0.3s ease;
+	padding: 0.5rem 1rem;
+	border-radius: 20px;
 }
 
 nav a:hover {
 	color: var(--brown-dark);
+	background-color: var(--beige-light);
 }
 
 .user-icon {
@@ -59,42 +63,81 @@ nav a:hover {
 .user-icon a {
 	color: var(--brown-medium);
 	text-decoration: none;
+	padding: 0.5rem 1rem;
+	border-radius: 20px;
+	transition: all 0.3s ease;
+}
+
+.user-icon a:hover {
+	background-color: var(--beige-light);
+	color: var(--brown-dark);
 }
 
 .hero {
-	background: linear-gradient(rgba(228, 213, 184, 0.85), rgba(228, 213, 184, 0.85)),
-				url('Image/concept-de-traitement-spa-plat.jpg') center/cover no-repeat;
+	background: linear-gradient(rgba(228, 213, 184, 0.75), rgba(228, 213, 184, 0.75)),
+				url('./Image/hero-background.jpg') center/cover no-repeat;
 	text-align: center;
-	padding: 5rem 2rem;
+	padding: 8rem 2rem;
 	margin: 2rem 5%;
 	border-radius: 15px;
 	box-shadow: 0 4px 24px rgba(140, 110, 80, 0.08);
+	position: relative;
+	overflow: hidden;
+}
+
+.hero::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: linear-gradient(45deg, 
+		rgba(228, 213, 184, 0.8) 0%,
+		rgba(196, 164, 132, 0.7) 100%);
+	z-index: 1;
+}
+
+.hero h2, .hero .cta-sub, .hero .btn {
+	position: relative;
+	z-index: 2;
 }
 
 .hero h2 {
 	color: var(--brown-dark);
-	font-size: 2.5rem;
-	margin-bottom: 1rem;
+	font-size: 3.2rem;
+	margin-bottom: 1.5rem;
+	text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.15);
+	font-weight: 700;
 }
 
 .cta-sub {
-	color: var(--brown-medium);
-	font-size: 1.2rem;
-	margin-bottom: 2rem;
+	color: var(--brown-dark);
+	font-size: 1.5rem;
+	margin-bottom: 2.5rem;
+	font-weight: 500;
+	text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
 }
 
 .btn {
 	display: inline-block;
 	background-color: var(--brown-medium);
 	color: white;
-	padding: 1rem 2rem;
+	padding: 1.2rem 3.5rem;
 	border-radius: 30px;
 	text-decoration: none;
-	transition: background-color 0.3s ease;
+	transition: all 0.3s ease;
+	font-weight: 600;
+	letter-spacing: 0.5px;
+	box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+	font-size: 1.1rem;
+	text-transform: uppercase;
 }
 
 .btn:hover {
 	background-color: var(--brown-dark);
+	transform: translateY(-3px);
+	box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
 }
 
 .phrases {
@@ -142,32 +185,35 @@ nav a:hover {
 	padding: 0;
 	width: max-content;
 	gap: 20px;
-	animation: scroll 30s linear infinite;
+	animation: scroll 20s linear infinite;
 }
 
 .favorites li {
 	background-color: var(--beige-light);
 	padding: 1.5rem;
 	text-align: center;
-	transition: transform 0.3s ease;
+	transition: all 0.3s ease;
 	min-width: 250px;
 	flex-shrink: 0;
 	border-radius: 10px;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+	font-weight: 500;
 }
 
 .favorites li:hover {
 	transform: translateY(-5px);
 	background-color: var(--beige-medium);
 	animation-play-state: paused;
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
-/* Ajout d'un effet de fondu sur les bords */
+/* Effet de fondu sur les bords */
 .favorites::before,
 .favorites::after {
 	content: '';
 	position: absolute;
 	top: 0;
-	width: 100px;
+	width: 150px;
 	height: 100%;
 	z-index: 1;
 	pointer-events: none;
@@ -175,12 +221,29 @@ nav a:hover {
 
 .favorites::before {
 	left: 0;
-	background: linear-gradient(to right, white, transparent);
+	background: linear-gradient(to right, white 0%, transparent 100%);
 }
 
 .favorites::after {
 	right: 0;
-	background: linear-gradient(to left, white, transparent);
+	background: linear-gradient(to left, white 0%, transparent 100%);
+}
+
+/* Duplication des éléments pour un défilement infini */
+.favorites ul {
+	display: flex;
+	animation: scroll 20s linear infinite;
+}
+
+.favorites ul:hover {
+	animation-play-state: paused;
+}
+
+/* Ajout d'une copie des éléments pour un défilement continu */
+.favorites ul::after {
+	content: '';
+	display: block;
+	width: 20px;
 }
 
 footer {
@@ -199,7 +262,6 @@ footer {
 	text-decoration: none;
 }
 
-<<<<<<< HEAD
 .footer-links a:hover {
 	color: white;
 }
@@ -217,7 +279,6 @@ footer {
 	.favorites ul {
 		grid-template-columns: 1fr;
 	}
-=======
 /* Login Page Styles */
 .login-container {
 	max-width: 400px;
@@ -289,5 +350,5 @@ footer {
 
 .login-links a:hover {
 	text-decoration: underline;
->>>>>>> 5845cb174d79f1158d452d3cbb02afce4b516b83
+}
 }
