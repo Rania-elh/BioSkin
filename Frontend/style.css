@@ -122,3 +122,76 @@ footer a {
 	color: #6d4c41;
 	text-decoration: none;
 }
+
+/* Login Page Styles */
+.login-container {
+	max-width: 400px;
+	margin: 50px auto;
+	padding: 30px;
+	background-color: #fff8ec;
+	border-radius: 10px;
+	box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.login-container h2 {
+	text-align: center;
+	color: #795548;
+	margin-bottom: 30px;
+}
+
+.form-group {
+	margin-bottom: 20px;
+}
+
+.form-group label {
+	display: block;
+	margin-bottom: 5px;
+	color: #4e342e;
+	font-weight: bold;
+}
+
+.form-group input {
+	width: 100%;
+	padding: 10px;
+	border: 1px solid #e0c9a6;
+	border-radius: 5px;
+	background-color: #fff;
+	font-size: 1em;
+}
+
+.form-group input:focus {
+	outline: none;
+	border-color: #a1887f;
+}
+
+.login-btn {
+	width: 100%;
+	padding: 12px;
+	background-color: #a1887f;
+	color: #fff;
+	border: none;
+	border-radius: 5px;
+	font-size: 1em;
+	font-weight: bold;
+	cursor: pointer;
+	transition: background-color 0.3s;
+}
+
+.login-btn:hover {
+	background-color: #8d6e63;
+}
+
+.login-links {
+	text-align: center;
+	margin-top: 20px;
+}
+
+.login-links a {
+	color: #6d4c41;
+	text-decoration: none;
+	font-size: 0.9em;
+}
+
+.login-links a:hover {
+	text-decoration: underline;
+}
