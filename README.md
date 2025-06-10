@@ -22,23 +22,7 @@ BioSkin est un site web qui permet aux utilisateurs de générer des recettes de
 ### Won’t Have
 - Aucun diagnostic ou recommandation à caractère **médical**.
 
----
 
-## Technologies utilisées
-
-### Frontend
-	- HTML5 / CSS3
-	- JavaScript (Vanilla ou React selon implémentation)
-- Responsive Design (mobile first)
-
-### Backend
-	- Node.js avec Express *(ou Flask si Python choisi)*
-	- API RESTful
-
-### Base de données
-- MySQL (MariaDB)
-
-	---
 
 ## Structure du projet
 
