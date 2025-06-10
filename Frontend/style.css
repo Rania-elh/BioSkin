@@ -612,3 +612,445 @@ footer {
 		padding: 1.5rem;
 	}
 }
+
+/* Style de la page de création de recette */
+.recipe-creator {
+	padding: 2rem;
+	max-width: 1200px;
+	margin: 0 auto;
+}
+
+.recipe-creator h2 {
+	text-align: center;
+	color: var(--brown-dark);
+	margin-bottom: 1rem;
+	font-size: 2.5rem;
+}
+
+.subtitle {
+	text-align: center;
+	color: var(--brown-medium);
+	margin-bottom: 3rem;
+}
+
+/* Grille des types de peau */
+.skin-type-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+	gap: 1.5rem;
+	margin-bottom: 3rem;
+}
+
+.skin-type-card {
+	cursor: pointer;
+}
+
+.skin-type-card input[type="radio"] {
+	display: none;
+}
+
+.skin-type-card .card-content {
+	background: white;
+	padding: 1.5rem;
+	border-radius: 10px;
+	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+	transition: all 0.3s ease;
+}
+
+.skin-type-card:hover .card-content {
+	transform: translateY(-5px);
+	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+.skin-type-card input[type="radio"]:checked + .card-content {
+	border: 2px solid var(--brown-medium);
+}
+
+/* Section des ingrédients */
+.ingredients-search {
+	margin-bottom: 3rem;
+}
+
+.search-container {
+	display: flex;
+	gap: 1rem;
+	margin-bottom: 1.5rem;
+}
+
+#ingredient-search {
+	flex: 1;
+	padding: 1rem;
+	border: 1px solid var(--beige-medium);
+	border-radius: 5px;
+	font-size: 1rem;
+}
+
+.add-ingredient-btn {
+	padding: 1rem 2rem;
+	background-color: var(--brown-medium);
+	color: white;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+}
+
+.add-ingredient-btn:hover {
+	background-color: var(--brown-dark);
+}
+
+.ingredients-list {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+	gap: 1.5rem;
+}
+
+.ingredient-card {
+	position: relative;
+}
+
+.ingredient-card .card-content {
+	background: white;
+	padding: 1.5rem;
+	border-radius: 10px;
+	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.remove-ingredient {
+	position: absolute;
+	top: 0.5rem;
+	right: 0.5rem;
+	background: none;
+	border: none;
+	color: var(--brown-medium);
+	font-size: 1.5rem;
+	cursor: pointer;
+	opacity: 0.5;
+	transition: opacity 0.3s ease;
+}
+
+.remove-ingredient:hover {
+	opacity: 1;
+}
+
+/* Grille des objectifs */
+.goals-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+	gap: 1.5rem;
+	margin-bottom: 3rem;
+}
+
+.goal-card {
+	cursor: pointer;
+}
+
+.goal-card input[type="checkbox"] {
+	display: none;
+}
+
+.goal-card .card-content {
+	background: white;
+	padding: 1.5rem;
+	border-radius: 10px;
+	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+	transition: all 0.3s ease;
+}
+
+.goal-card:hover .card-content {
+	transform: translateY(-5px);
+	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+.goal-card input[type="checkbox"]:checked + .card-content {
+	border: 2px solid var(--brown-medium);
+}
+
+/* Bouton de soumission */
+.form-actions {
+	text-align: center;
+}
+
+.btn-primary {
+	background-color: var(--brown-medium);
+	color: white;
+	padding: 1rem 3rem;
+	border: none;
+	border-radius: 5px;
+	font-size: 1.1rem;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+	background-color: var(--brown-dark);
+}
+
+/* Media queries */
+@media (max-width: 768px) {
+	.recipe-creator {
+		padding: 1rem;
+	}
+
+	.skin-type-grid,
+	.goals-grid {
+		grid-template-columns: 1fr;
+	}
+
+	.search-container {
+		flex-direction: column;
+	}
+
+	.add-ingredient-btn {
+		width: 100%;
+	}
+}
+
+/* Éléments flottants */
+.floating-elements {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	pointer-events: none;
+	z-index: 1;
+}
+
+.floating-element {
+	position: absolute;
+	font-size: 2rem;
+	opacity: 0.6;
+	transition: transform 0.3s ease;
+}
+
+.floating-element:nth-child(1) { top: 20%; left: 10%; }
+.floating-element:nth-child(2) { top: 60%; left: 80%; }
+.floating-element:nth-child(3) { top: 80%; left: 20%; }
+.floating-element:nth-child(4) { top: 30%; left: 70%; }
+
+/* Animation du titre */
+.animated-title {
+	position: relative;
+	display: inline-block;
+	background: linear-gradient(45deg, var(--brown-dark), var(--brown-medium));
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	animation: titleGlow 2s ease-in-out infinite;
+}
+
+@keyframes titleGlow {
+	0%, 100% { text-shadow: 0 0 20px rgba(139, 115, 85, 0.2); }
+	50% { text-shadow: 0 0 30px rgba(139, 115, 85, 0.4); }
+}
+
+/* Style des cartes amélioré */
+.skin-type-card .card-content,
+.ingredient-card .card-content,
+.goal-card .card-content {
+	position: relative;
+	overflow: hidden;
+	transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-icon,
+.ingredient-image,
+.goal-icon {
+	font-size: 2rem;
+	margin-bottom: 1rem;
+	transition: transform 0.3s ease;
+}
+
+.skin-type-card:hover .card-icon,
+.ingredient-card:hover .ingredient-image,
+.goal-card:hover .goal-icon {
+	transform: scale(1.2) rotate(5deg);
+}
+
+.card-details {
+	height: 0;
+	opacity: 0;
+	transition: all 0.3s ease;
+	overflow: hidden;
+}
+
+.skin-type-card:hover .card-details {
+	height: auto;
+	opacity: 1;
+	margin-top: 1rem;
+}
+
+.card-details ul {
+	list-style: none;
+	padding: 0;
+}
+
+.card-details li {
+	color: var(--brown-light);
+	font-size: 0.9rem;
+	margin-bottom: 0.5rem;
+	padding-left: 1.5rem;
+	position: relative;
+}
+
+.card-details li::before {
+	content: '•';
+	position: absolute;
+	left: 0;
+	color: var(--brown-medium);
+}
+
+/* Barre de recherche améliorée */
+.search-container {
+	position: relative;
+	margin-bottom: 2rem;
+}
+
+.search-icon {
+	position: absolute;
+	right: 1rem;
+	top: 50%;
+	transform: translateY(-50%);
+	font-size: 1.2rem;
+	opacity: 0.5;
+	transition: all 0.3s ease;
+}
+
+.search-container.focused .search-icon {
+	opacity: 1;
+	transform: translateY(-50%) scale(1.1);
+}
+
+#ingredient-search {
+	padding-right: 3rem;
+	transition: all 0.3s ease;
+}
+
+.search-container.focused #ingredient-search {
+	box-shadow: 0 4px 15px rgba(139, 115, 85, 0.1);
+}
+
+/* Propriétés des ingrédients */
+.ingredient-details {
+	margin-top: 1rem;
+	padding-top: 1rem;
+	border-top: 1px solid var(--beige-medium);
+}
+
+.property {
+	margin-bottom: 0.8rem;
+}
+
+.property-name {
+	display: block;
+	font-size: 0.9rem;
+	color: var(--brown-medium);
+	margin-bottom: 0.3rem;
+}
+
+.property-bar {
+	height: 6px;
+	background-color: var(--beige-medium);
+	border-radius: 3px;
+	overflow: hidden;
+}
+
+.property-fill {
+	height: 100%;
+	background-color: var(--brown-medium);
+	transition: width 1s ease-in-out;
+}
+
+/* Cercles de progression */
+.progress-circle {
+	position: relative;
+	width: 80px;
+	height: 80px;
+	margin: 1rem auto;
+}
+
+.progress-circle svg {
+	transform: rotate(-90deg);
+}
+
+.progress-text {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	font-size: 0.9rem;
+	color: var(--brown-medium);
+	font-weight: 500;
+}
+
+/* Bouton amélioré */
+.btn-primary {
+	position: relative;
+	overflow: hidden;
+	padding: 1.2rem 3rem;
+}
+
+.btn-text {
+	position: relative;
+	z-index: 1;
+	transition: transform 0.3s ease;
+}
+
+.btn-icon {
+	position: absolute;
+	right: 1rem;
+	top: 50%;
+	transform: translateY(-50%);
+	opacity: 0;
+	transition: all 0.3s ease;
+}
+
+.btn-primary:hover .btn-text {
+	transform: translateX(-10px);
+}
+
+.btn-primary:hover .btn-icon {
+	opacity: 1;
+	right: 2rem;
+}
+
+.btn-primary::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(45deg, var(--brown-medium), var(--brown-dark));
+	opacity: 0;
+	transition: opacity 0.3s ease;
+}
+
+.btn-primary:hover::before {
+	opacity: 1;
+}
+
+/* Animations au survol */
+.skin-type-card.hover .card-content,
+.ingredient-card.hover .card-content,
+.goal-card.hover .card-content {
+	transform: translateY(-5px) scale(1.02);
+	box-shadow: 0 8px 25px rgba(139, 115, 85, 0.15);
+}
+
+/* Media queries */
+@media (max-width: 768px) {
+	.floating-elements {
+		display: none;
+	}
+	
+	.card-details {
+		height: auto;
+		opacity: 1;
+	}
+	
+	.progress-circle {
+		width: 60px;
+		height: 60px;
+	}
+}
