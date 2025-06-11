@@ -9,32 +9,42 @@
 </head>
 <body>
 	<header>
-		<nav class="navbar">
-			<div class="logo">
-				<a href="index.html">BioSkin</a>
-			</div>
-			<ul class="nav-links">
+		<div class="logo">
+			<h1>BioSkin</h1>
+		</div>
+		<nav>
+			<ul>
 				<li><a href="index.html">Accueil</a></li>
 				<li><a href="creer-recette.html" class="active">Créer votre recette</a></li>
 				<li><a href="favoris.html">Favoris</a></li>
 			</ul>
 		</nav>
+		<div class="user-icon">
+			<a href="profil.html">Mon profil</a>
+		</div>
 	</header>
 
 	<main>
 		<section class="recipe-creator">
-			<h2>Créez votre recette personnalisée</h2>
-			<p class="subtitle">Découvrez la recette parfaite pour votre peau</p>
+			<div class="hero-section">
+				<h2>Créez votre recette personnalisée</h2>
+				<p class="subtitle">Découvrez la recette parfaite pour votre peau</p>
+			</div>
 
 			<form class="recipe-form">
 				<div class="form-section">
-					<h3>Votre type de peau</h3>
+					<div class="section-header">
+						<h3>Votre type de peau</h3>
+						<p class="section-description">Sélectionnez le type de peau qui vous correspond le mieux</p>
+					</div>
 					<div class="skin-type-grid">
 						<label class="skin-type-card" data-type="dry">
 							<input type="radio" name="skin-type" value="dry">
 							<div class="card-content">
-								<h4>Peau sèche</h4>
-								<p>Tiraillements, desquamation</p>
+								<div class="card-header">
+									<h4>Peau sèche</h4>
+									<p>Tiraillements, desquamation</p>
+								</div>
 								<div class="card-details">
 									<ul>
 										<li>Tiraillements fréquents</li>
@@ -47,8 +57,10 @@
 						<label class="skin-type-card" data-type="oily">
 							<input type="radio" name="skin-type" value="oily">
 							<div class="card-content">
-								<h4>Peau grasse</h4>
-								<p>Brillance, pores dilatés</p>
+								<div class="card-header">
+									<h4>Peau grasse</h4>
+									<p>Brillance, pores dilatés</p>
+								</div>
 								<div class="card-details">
 									<ul>
 										<li>Brillance excessive</li>
@@ -61,8 +73,10 @@
 						<label class="skin-type-card" data-type="combination">
 							<input type="radio" name="skin-type" value="combination">
 							<div class="card-content">
-								<h4>Peau mixte</h4>
-								<p>Brillance en T, zones sèches</p>
+								<div class="card-header">
+									<h4>Peau mixte</h4>
+									<p>Brillance en T, zones sèches</p>
+								</div>
 								<div class="card-details">
 									<ul>
 										<li>Brillance en T</li>
@@ -75,8 +89,10 @@
 						<label class="skin-type-card" data-type="sensitive">
 							<input type="radio" name="skin-type" value="sensitive">
 							<div class="card-content">
-								<h4>Peau sensible</h4>
-								<p>Réactions, rougeurs</p>
+								<div class="card-header">
+									<h4>Peau sensible</h4>
+									<p>Réactions, rougeurs</p>
+								</div>
 								<div class="card-details">
 									<ul>
 										<li>Réactions cutanées</li>
@@ -90,11 +106,16 @@
 				</div>
 
 				<div class="form-section">
-					<h3>Vos ingrédients disponibles</h3>
+					<div class="section-header">
+						<h3>Vos ingrédients disponibles</h3>
+						<p class="section-description">Ajoutez les ingrédients que vous avez chez vous</p>
+					</div>
 					<div class="ingredients-search">
 						<div class="search-container">
 							<input type="text" id="ingredient-search" placeholder="Ajoutez vos ingrédients (ex: Aloe Vera, Huile d'Argan...)">
-							<button type="button" class="add-ingredient-btn">Ajouter</button>
+							<button type="button" class="add-ingredient-btn">
+								<span>Ajouter</span>
+							</button>
 						</div>
 						<div class="ingredients-list">
 							<!-- Les ingrédients seront ajoutés dynamiquement ici -->
@@ -103,34 +124,45 @@
 				</div>
 
 				<div class="form-section">
-					<h3>Vos objectifs</h3>
+					<div class="section-header">
+						<h3>Vos objectifs</h3>
+						<p class="section-description">Sélectionnez les résultats que vous souhaitez obtenir</p>
+					</div>
 					<div class="goals-grid">
 						<label class="goal-card" data-goal="hydratation">
 							<input type="checkbox" name="goals" value="hydratation">
 							<div class="card-content">
-								<h4>Hydratation</h4>
-								<p>Nourrir et hydrater la peau</p>
+								<div class="card-header">
+									<h4>Hydratation</h4>
+									<p>Nourrir et hydrater la peau</p>
+								</div>
 							</div>
 						</label>
 						<label class="goal-card" data-goal="anti-age">
 							<input type="checkbox" name="goals" value="anti-age">
 							<div class="card-content">
-								<h4>Anti-âge</h4>
-								<p>Lutter contre les signes de l'âge</p>
+								<div class="card-header">
+									<h4>Anti-âge</h4>
+									<p>Lutter contre les signes de l'âge</p>
+								</div>
 							</div>
 						</label>
 						<label class="goal-card" data-goal="acne">
 							<input type="checkbox" name="goals" value="acne">
 							<div class="card-content">
-								<h4>Anti-imperfections</h4>
-								<p>Traiter l'acné et les imperfections</p>
+								<div class="card-header">
+									<h4>Anti-imperfections</h4>
+									<p>Traiter l'acné et les imperfections</p>
+								</div>
 							</div>
 						</label>
 						<label class="goal-card" data-goal="brightening">
 							<input type="checkbox" name="goals" value="brightening">
 							<div class="card-content">
-								<h4>Éclat</h4>
-								<p>Unifier et illuminer le teint</p>
+								<div class="card-header">
+									<h4>Éclat</h4>
+									<p>Unifier et illuminer le teint</p>
+								</div>
 							</div>
 						</label>
 					</div>
@@ -167,7 +199,9 @@
 				ingredientCard.className = 'ingredient-card';
 				ingredientCard.innerHTML = `
 					<div class="card-content">
-						<h4>${ingredient}</h4>
+						<div class="card-header">
+							<h4>${ingredient}</h4>
+						</div>
 						<div class="ingredient-details">
 							<div class="property">
 								<span class="property-name">Hydratation</span>

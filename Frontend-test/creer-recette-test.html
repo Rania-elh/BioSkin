@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Créer votre recette - BioSkin Test</title>
+	<link rel="stylesheet" href="style.css">
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+	<header>
+		<div class="logo">
+			<h1>BioSkin</h1>
+		</div>
+		<nav>
+			<ul>
+				<li><a href="index-test.html">Accueil</a></li>
+				<li><a href="creer-recette-test.html" class="active">Créer votre recette</a></li>
+				<li><a href="favoris.html">Favoris</a></li>
+			</ul>
+		</nav>
+		<div class="user-icon">
+			<a href="login.html">Mon profil</a>
+		</div>
+	</header>
+
+	<main>
+		<section class="recipe-creator">
+			<div class="hero-section">
+				<h2>Créez votre recette personnalisée</h2>
+				<p class="subtitle">Découvrez la recette parfaite pour votre peau</p>
+			</div>
+
+			<form class="recipe-form">
+				<div class="form-section skin-scanner-section">
+					<div class="section-header">
+						<p class="section-description">Cliquez sur les zones que vous souhaitez traiter</p>
+					</div>
+					<div class="skin-scanner">
+						<div class="face-container">
+							<svg class="face-svg" viewBox="0 0 900 1200" xmlns="http://www.w3.org/2000/svg">
+								<!-- Image de fond du visage féminin -->
+								<image href="https://sdmntpritalynorth.oaiusercontent.com/files/00000000-8988-6246-9cc8-cd5e15d8e7bc/raw?se=2025-06-11T18%3A58%3A01Z&sp=r&sv=2024-08-04&sr=b&scid=5dde2d87-a1e5-5d01-8c5b-94dde300478a&skoid=b32d65cd-c8f1-46fb-90df-c208671889d4&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-06-11T04%3A45%3A41Z&ske=2025-06-12T04%3A45%3A41Z&sks=b&skv=2024-08-04&sig=/0ISrKu0VoD0Fz2ZYA75uzjpKIdUF2M2Xxefsk8Wwlo%3D" width="900" height="1200" preserveAspectRatio="xMidYMid meet"/>
+								
+								<!-- Zones cliquables transparentes superposées -->
+								<!-- Visage entier -->
+								<circle class="face-zone" data-zone="face" cx="450" cy="600" r="270"/>
+								
+								<!-- Front -->
+								<ellipse class="face-zone" data-zone="front" cx="450" cy="315" rx="123" ry="67"/>
+								
+								<!-- Joues -->
+								<circle class="face-zone" data-zone="cheeks" cx="315" cy="585" r="55"/>
+								<circle class="face-zone" data-zone="cheeks" cx="585" cy="585" r="55"/>
+								
+								<!-- Menton -->
+								<ellipse class="face-zone" data-zone="chin" cx="450" cy="765" rx="78" ry="45"/>
+								
+								<!-- Nez -->
+								<ellipse class="face-zone" data-zone="nose" cx="450" cy="495" rx="33" ry="55"/>
+								
+								<!-- Yeux -->
+								<ellipse class="face-zone" data-zone="eyes" cx="382" cy="427" rx="33" ry="18"/>
+								<ellipse class="face-zone" data-zone="eyes" cx="518" cy="427" rx="33" ry="18"/>
+								
+								<!-- Cernes -->
+								<ellipse class="face-zone" data-zone="dark-circles" cx="382" cy="450" rx="27" ry="13"/>
+								<ellipse class="face-zone" data-zone="dark-circles" cx="518" cy="450" rx="27" ry="13"/>
+								
+								<!-- Bouche -->
+								<ellipse class="face-zone" data-zone="mouth" cx="450" cy="652" rx="55" ry="22"/>
+								
+								<!-- Tempes -->
+								<ellipse class="face-zone" data-zone="temples" cx="247" cy="405" rx="33" ry="18"/>
+								<ellipse class="face-zone" data-zone="temples" cx="653" cy="405" rx="33" ry="18"/>
+							</svg>
+						</div>
+						<div class="selected-zones">
+							<h4>Zones sélectionnées :</h4>
+							<div class="zones-list"></div>
+						</div>
+					</div>
+				</div>
+
+				<div class="form-section">
+					<div class="section-header">
+						<h3>Votre type de peau</h3>
+						<p class="section-description">Sélectionnez le type de peau qui vous correspond le mieux</p>
+					</div>
+					<div class="skin-type-grid">
+						<label class="skin-type-card" data-type="dry">
+							<input type="radio" name="skin-type" value="dry">
+							<div class="card-content">
+								<div class="card-header">
+									<h4>Peau sèche</h4>
+									<p>Tiraillements, desquamation</p>
+								</div>
+								<div class="card-details">
+									<ul>
+										<li>Tiraillements fréquents</li>
+										<li>Desquamation</li>
+										<li>Rugosité</li>
+									</ul>
+								</div>
+							</div>
+						</label>
+						<label class="skin-type-card" data-type="oily">
+							<input type="radio" name="skin-type" value="oily">
+							<div class="card-content">
+								<div class="card-header">
+									<h4>Peau grasse</h4>
+									<p>Brillance, pores dilatés</p>
+								</div>
+								<div class="card-details">
+									<ul>
+										<li>Brillance excessive</li>
+										<li>Pores dilatés</li>
+										<li>Imperfections</li>
+									</ul>
+								</div>
+							</div>
+						</label>
+						<label class="skin-type-card" data-type="combination">
+							<input type="radio" name="skin-type" value="combination">
+							<div class="card-content">
+								<div class="card-header">
+									<h4>Peau mixte</h4>
+									<p>Brillance en T, zones sèches</p>
+								</div>
+								<div class="card-details">
+									<ul>
+										<li>Brillance en T</li>
+										<li>Zones sèches</li>
+										<li>Équilibre à trouver</li>
+									</ul>
+								</div>
+							</div>
+						</label>
+						<label class="skin-type-card" data-type="sensitive">
+							<input type="radio" name="skin-type" value="sensitive">
+							<div class="card-content">
+								<div class="card-header">
+									<h4>Peau sensible</h4>
+									<p>Réactions, rougeurs</p>
+								</div>
+								<div class="card-details">
+									<ul>
+										<li>Réactions cutanées</li>
+										<li>Rougeurs</li>
+										<li>Picotements</li>
+									</ul>
+								</div>
+							</div>
+						</label>
+					</div>
+				</div>
+
+				<div class="form-section">
+					<div class="section-header">
+						<h3>Vos ingrédients disponibles</h3>
+						<p class="section-description">Ajoutez les ingrédients que vous avez chez vous</p>
+					</div>
+					<div class="ingredients-search">
+						<div class="search-container">
+							<input type="text" id="ingredient-search" placeholder="Ajoutez vos ingrédients (ex: Aloe Vera, Huile d'Argan...)">
+							<button type="button" class="add-ingredient-btn">
+								<span>Ajouter</span>
+							</button>
+						</div>
+						<div class="ingredients-list">
+							<!-- Les ingrédients seront ajoutés dynamiquement ici -->
+						</div>
+					</div>
+				</div>
+
+				<div class="form-section">
+					<div class="section-header">
+						<h3>Vos objectifs</h3>
+						<p class="section-description">Sélectionnez les résultats que vous souhaitez obtenir</p>
+					</div>
+					<div class="goals-grid">
+						<label class="goal-card" data-goal="hydratation">
+							<input type="checkbox" name="goals" value="hydratation">
+							<div class="card-content">
+								<div class="card-header">
+									<h4>Hydratation</h4>
+									<p>Nourrir et hydrater la peau</p>
+								</div>
+							</div>
+						</label>
+						<label class="goal-card" data-goal="anti-age">
+							<input type="checkbox" name="goals" value="anti-age">
+							<div class="card-content">
+								<div class="card-header">
+									<h4>Anti-âge</h4>
+									<p>Lutter contre les signes de l'âge</p>
+								</div>
+							</div>
+						</label>
+						<label class="goal-card" data-goal="acne">
+							<input type="checkbox" name="goals" value="acne">
+							<div class="card-content">
+								<div class="card-header">
+									<h4>Anti-imperfections</h4>
+									<p>Traiter l'acné et les imperfections</p>
+								</div>
+							</div>
+						</label>
+						<label class="goal-card" data-goal="brightening">
+							<input type="checkbox" name="goals" value="brightening">
+							<div class="card-content">
+								<div class="card-header">
+									<h4>Éclat</h4>
+									<p>Unifier et illuminer le teint</p>
+								</div>
+							</div>
+						</label>
+					</div>
+				</div>
+
+				<div class="form-actions">
+					<button type="submit" class="btn btn-primary">
+						<span class="btn-text">Générer ma recette</span>
+					</button>
+				</div>
+			</form>
+		</section>
+	</main>
+
+	<footer>
+		<div class="footer-content">
+			<div class="footer-links">
+				<p>Contact : <a href="mailto:contact@bioskin.com">contact@bioskin.com</a></p>
+			</div>
+			<p>&copy; 2025 BioSkin. Tous droits réservés.</p>
+		</div>
+	</footer>
+
+	<script>
+		// Gestion du scanner de peau
+		const faceZones = document.querySelectorAll('.face-zone');
+		const zonesList = document.querySelector('.zones-list');
+		const selectedZones = new Set();
+
+		faceZones.forEach(zone => {
+			zone.addEventListener('click', () => {
+				const zoneId = zone.getAttribute('data-zone');
+				if (selectedZones.has(zoneId)) {
+					selectedZones.delete(zoneId);
+					zone.classList.remove('selected');
+				} else {
+					selectedZones.add(zoneId);
+					zone.classList.add('selected');
+				}
+				updateZonesList();
+			});
+		});
+
+		function updateZonesList() {
+			zonesList.innerHTML = '';
+			selectedZones.forEach(zone => {
+				const zoneElement = document.createElement('div');
+				zoneElement.className = 'selected-zone';
+				zoneElement.innerHTML = `
+					<span>${getZoneName(zone)}</span>
+					<button class="remove-zone" data-zone="${zone}">×</button>
+				`;
+				zonesList.appendChild(zoneElement);
+			});
+
+			// Ajouter les événements de suppression
+			document.querySelectorAll('.remove-zone').forEach(button => {
+				button.addEventListener('click', (e) => {
+					const zone = e.target.getAttribute('data-zone');
+					selectedZones.delete(zone);
+					document.querySelector(`.face-zone[data-zone="${zone}"]`).classList.remove('selected');
+					updateZonesList();
+				});
+			});
+		}
+
+		function getZoneName(zone) {
+			const zoneNames = {
+				'face': 'Visage',
+				'front': 'Front',
+				'cheeks': 'Joues',
+				'chin': 'Menton',
+				'nose': 'Nez',
+				'eyes': 'Yeux',
+				'mouth': 'Bouche',
+				'temples': 'Temples'
+			};
+			return zoneNames[zone] || zone;
+		}
+
+		// Gestion des ingrédients
+		const ingredientSearch = document.getElementById('ingredient-search');
+		const addIngredientBtn = document.querySelector('.add-ingredient-btn');
+		const ingredientsList = document.querySelector('.ingredients-list');
+
+		// Modification du script pour ajouter les bienfaits des ingrédients
+		const ingredientBenefits = {
+			'Aloe Vera': {
+				title: 'Bienfaits de l\'Aloe Vera',
+				benefits: [
+					'Hydratation intense de la peau',
+					'Apaisement des irritations',
+					'Régénération cellulaire',
+					'Anti-inflammatoire naturel'
+				]
+			},
+			'Huile d\'Argan': {
+				title: 'Bienfaits de l\'Huile d\'Argan',
+				benefits: [
+					'Nourrissement profond',
+					'Anti-âge naturel',
+					'Protection de la barrière cutanée',
+					'Régulation du sébum'
+				]
+			},
+			'Huile de Jojoba': {
+				title: 'Bienfaits de l\'Huile de Jojoba',
+				benefits: [
+					'Hydratation non comédogène',
+					'Régulation du sébum',
+					'Anti-bactérien naturel',
+					'Apaisement des peaux sensibles'
+				]
+			},
+			'Miel': {
+				title: 'Bienfaits du Miel',
+				benefits: [
+					'Antibactérien naturel',
+					'Hydratation profonde',
+					'Apaisement des irritations',
+					'Éclat du teint'
+				]
+			}
+		};
+
+		// Modification de la fonction d'ajout d'ingrédient
+		addIngredientBtn.addEventListener('click', () => {
+			const ingredient = ingredientSearch.value.trim();
+			if (ingredient) {
+				const ingredientCard = document.createElement('div');
+				ingredientCard.className = 'ingredient-card';
+				
+				// Vérifier si nous avons des bienfaits pour cet ingrédient
+				const benefits = ingredientBenefits[ingredient] || {
+					title: `Bienfaits de ${ingredient}`,
+					benefits: ['Bienfaits à découvrir']
+				};
+
+				ingredientCard.innerHTML = `
+					<div class="card-content">
+						<div class="card-header">
+							<h4>${ingredient}</h4>
+							<button type="button" class="remove-ingredient">×</button>
+						</div>
+						<div class="ingredient-benefits">
+							<h5>${benefits.title}</h5>
+							<ul>
+								${benefits.benefits.map(benefit => `<li>${benefit}</li>`).join('')}
+							</ul>
+						</div>
+					</div>
+				`;
+				
+				ingredientsList.appendChild(ingredientCard);
+				ingredientSearch.value = '';
+
+				// Ajouter l'événement de suppression
+				ingredientCard.querySelector('.remove-ingredient').addEventListener('click', () => {
+					ingredientCard.remove();
+				});
+			}
+		});
+
+		// Animation des cartes au survol
+		document.querySelectorAll('.skin-type-card, .goal-card').forEach(card => {
+			card.addEventListener('mouseenter', () => {
+				card.classList.add('hover');
+			});
+			card.addEventListener('mouseleave', () => {
+				card.classList.remove('hover');
+			});
+		});
+	</script>
+
+	<style>
+	/* Styles de la barre de navigation */
+	header {
+		background-color: white;
+		padding: 1rem 5%;
+		box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	.logo h1 {
+		color: var(--brown-medium);
+		font-size: 2.2rem;
+		font-weight: 700;
+		letter-spacing: 1px;
+	}
+
+	nav ul {
+		display: flex;
+		gap: 2rem;
+		list-style: none;
+	}
+
+	nav a {
+		color: var(--brown-medium);
+		text-decoration: none;
+		font-weight: 500;
+		transition: color 0.3s ease;
+		padding: 0.5rem 1rem;
+		border-radius: 20px;
+	}
+
+	nav a:hover {
+		color: var(--brown-dark);
+		background-color: var(--beige-light);
+	}
+
+	.user-icon {
+		font-size: 0.9em;
+	}
+
+	.user-icon a {
+		color: var(--brown-medium);
+		text-decoration: none;
+		padding: 0.5rem 1rem;
+		border-radius: 20px;
+		transition: all 0.3s ease;
+	}
+
+	.user-icon a:hover {
+		background-color: var(--beige-light);
+		color: var(--brown-dark);
+	}
+
+	/* Styles existants */
+	.face-zone {
+		cursor: pointer;
+		transition: all 0.3s ease;
+		fill: transparent;
+		stroke: none;
+	}
+
+	.face-zone:hover {
+		fill: rgba(255, 255, 255, 0.1);
+		stroke: rgba(255, 255, 255, 0.2);
+		stroke-width: 1;
+	}
+
+	.face-zone.selected {
+		fill: rgba(255, 255, 255, 0.15);
+		stroke: rgba(255, 255, 255, 0.3);
+		stroke-width: 1;
+	}
+
+	.ingredient-card {
+		background: #fff;
+		border-radius: 8px;
+		padding: 15px;
+		margin: 10px 0;
+		box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+	}
+
+	.ingredient-benefits {
+		margin-top: 10px;
+		padding: 10px;
+		background: #f8f9fa;
+		border-radius: 6px;
+		font-size: 0.9em;
+		color: #666;
+	}
+
+	.ingredient-benefits h5 {
+		color: #333;
+		margin-bottom: 5px;
+	}
+
+	.ingredient-benefits ul {
+		margin: 0;
+		padding-left: 20px;
+	}
+
+	.ingredient-benefits li {
+		margin: 3px 0;
+	}
+	</style>
+</body>
+</html> 

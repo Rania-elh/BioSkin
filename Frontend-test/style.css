@@ -279,11 +279,13 @@ footer {
 	.favorites ul {
 		grid-template-columns: 1fr;
 	}
+}
+
 /* Login Page Styles */
 .login-container {
-	max-width: 600px;
+	max-width: 400px;
 	margin: 80px auto;
-	padding: 40px;
+	padding: 50px;
 	background-color: #fff8ec;
 	border-radius: 20px;
 	box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
@@ -296,10 +298,6 @@ footer {
 }
 
 .form-group {
-	display: flex;
-	flex-direction: column; /* Met chaque élément en colonne */
-	align-items: center; /* Centre les champs */
-	width: 100%;
 	margin-bottom: 20px;
 }
 
@@ -354,7 +352,6 @@ footer {
 
 .login-links a:hover {
 	text-decoration: underline;
-}
 }
 
 /* Section Témoignages */
@@ -1154,4 +1151,123 @@ footer {
 		width: 60px;
 		height: 60px;
 	}
+}
+
+/* Styles pour le scanner de peau */
+.skin-scanner-section {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+}
+
+.skin-scanner {
+    display: flex;
+    gap: 2rem;
+    align-items: flex-start;
+}
+
+.face-container {
+    flex: 1;
+    max-width: 400px;
+    background-color: var(--beige-light);
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.face-svg {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.face-zone {
+    fill: var(--beige-medium);
+    stroke: var(--brown-medium);
+    stroke-width: 2;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.face-zone:hover {
+    fill: var(--brown-light);
+    filter: brightness(1.1);
+}
+
+.face-zone.selected {
+    fill: var(--brown-medium);
+    stroke: var(--brown-dark);
+}
+
+.face-detail {
+    fill: none;
+    stroke: var(--brown-dark);
+    stroke-width: 1.5;
+}
+
+.selected-zones {
+    flex: 1;
+    background-color: var(--beige-light);
+    padding: 1.5rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.selected-zones h4 {
+    color: var(--brown-dark);
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.zones-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.selected-zone {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    padding: 0.8rem 1.2rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.selected-zone:hover {
+    transform: translateX(5px);
+}
+
+.remove-zone {
+    background: none;
+    border: none;
+    color: var(--brown-medium);
+    font-size: 1.2rem;
+    cursor: pointer;
+    padding: 0.2rem 0.5rem;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.remove-zone:hover {
+    color: var(--brown-dark);
+    background-color: var(--beige-light);
+}
+
+@media (max-width: 768px) {
+    .skin-scanner {
+        flex-direction: column;
+    }
+    
+    .face-container {
+        max-width: 100%;
+    }
+    
+    .selected-zones {
+        width: 100%;
+    }
 }
