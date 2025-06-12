@@ -355,6 +355,28 @@ footer {
 .login-links a:hover {
 	text-decoration: underline;
 }
+
+/* Centre le contenu verticalement dans la page */
+.login-page-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 150px); /* 100% de la hauteur visible moins header/footer */
+    padding: 40px 0;
+    background-color: #fdf6ef; /* Optionnel pour cohérence */
+}
+
+@media (max-width: 600px) {
+    .login-container {
+        width: 90%;
+        padding: 20px;
+    }
+
+    .login-page-wrapper {
+        padding: 20px 0;
+        min-height: auto;
+    }
+}
 }
 
 /* Section Témoignages */
