@@ -3,8 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Connectez-vous à BioSkin pour accéder à vos recettes personnalisées">
     <title>Connexion - BioSkin</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
@@ -25,31 +27,30 @@
 
     <main>
         <div class="login-container">
-            <h2>Connexion</h2>
-            <form action="#" method="POST">
+            <h2>Bienvenue sur BioSkin</h2>
+            <p class="login-subtitle">Connectez-vous pour accéder à vos recettes personnalisées</p>
+            <form action="#" method="POST" class="login-form">
                 <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" name="email" required placeholder="Votre email">
+                    <label for="email">Email ou téléphone</label>
+                    <input type="email" id="email" name="email" required placeholder="Votre email ou numéro de téléphone">
                 </div>
-		<div class="form-group">
-			<label for="phone">Numéro de téléphone</label>
-			<input type="tel" id="phone" name="phone" required placeholder="Votre numéro de telephone">
-		</div>
                 <div class="form-group">
                     <label for="password">Mot de passe</label>
                     <input type="password" id="password" name="password" required placeholder="Votre mot de passe">
                 </div>
-                <button type="submit" class="login-btn">Se connecter</button>
+                <button type="submit" class="btn">Se connecter</button>
                 <div class="login-links">
-                    <a href="#">Mot de passe oublié ?</a>
-                    <br>
-                    <a href="#">Créer un compte</a>
+                    <a href="#" class="forgot-password">Mot de passe oublié ?</a>
+                    <a href="#" class="create-account">Créer un compte</a>
                 </div>
             </form>
         </div>
     </main>
 
     <footer>
+        <div class="footer-links">
+            <p>Contact : <a href="mailto:contact@bioskin.com">contact@bioskin.com</a></p>
+        </div>
         <p>&copy; 2025 BioSkin. Tous droits réservés.</p>
     </footer>
 </body>
