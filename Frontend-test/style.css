@@ -1,9 +1,9 @@
 :root {
 	--beige-light: #f5f0e1;
 	--beige-medium: #e6d5b8;
-	--brown-light: #c4a484;
-	--brown-medium: #8b7355;
-	--brown-dark: #5c4d3c;
+	--brown-light: #D2B48C;
+	--brown-medium: #8B4513;
+	--brown-dark: #654321;
 }
 
 /* Reset */
@@ -1269,5 +1269,246 @@ footer {
     
     .selected-zones {
         width: 100%;
+    }
+}
+
+/* Media Queries pour mobile */
+@media screen and (max-width: 768px) {
+    /* Header et Navigation */
+    header {
+        padding: 0.8rem;
+        flex-direction: column;
+        gap: 0.8rem;
+    }
+
+    .logo h1 {
+        font-size: 1.8rem;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+        width: 100%;
+    }
+
+    nav a {
+        display: block;
+        width: 100%;
+        text-align: center;
+        padding: 0.6rem;
+        font-size: 0.9rem;
+    }
+
+    .user-icon {
+        width: 100%;
+        text-align: center;
+    }
+
+    .user-icon a {
+        font-size: 0.9rem;
+    }
+
+    /* Hero Section */
+    .hero {
+        padding: 2rem 1rem;
+    }
+
+    .hero h2 {
+        font-size: 1.8rem;
+        margin-bottom: 1rem;
+    }
+
+    .hero .btn {
+        padding: 0.8rem 1.5rem;
+        font-size: 0.9rem;
+    }
+
+    /* Phrases Section */
+    .phrases {
+        padding: 1.5rem 1rem;
+    }
+
+    .phrases p {
+        font-size: 0.95rem;
+        line-height: 1.5;
+    }
+
+    /* Benefits Section */
+    .benefits {
+        padding: 2rem 1rem;
+    }
+
+    .benefits h3 {
+        font-size: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .benefits-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .benefit-card {
+        padding: 1rem;
+    }
+
+    .benefit-card h4 {
+        font-size: 1.1rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .benefit-card p {
+        font-size: 0.9rem;
+    }
+
+    /* Favorites Section */
+    .favorites {
+        padding: 2rem 1rem;
+    }
+
+    .favorites h3 {
+        font-size: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .favorites ul {
+        columns: 1;
+        gap: 0.8rem;
+    }
+
+    .favorites li {
+        font-size: 0.9rem;
+        padding: 0.5rem;
+    }
+
+    /* Why BioSkin Section */
+    .why-bioskin {
+        padding: 2rem 1rem;
+    }
+
+    .why-bioskin h3 {
+        font-size: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .features-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .feature-card {
+        padding: 1rem;
+    }
+
+    .feature-card h4 {
+        font-size: 1.1rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .feature-card p {
+        font-size: 0.9rem;
+    }
+
+    /* Testimonials Section */
+    .testimonials {
+        padding: 2rem 1rem;
+    }
+
+    .testimonials h3 {
+        font-size: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .testimonials-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .testimonial-card {
+        padding: 1rem;
+    }
+
+    .testimonial-card .rating {
+        font-size: 1.2rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .testimonial-text {
+        font-size: 0.9rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .testimonial-author {
+        font-size: 0.85rem;
+    }
+
+    /* Add Testimonial Section */
+    .add-testimonial {
+        padding: 2rem 1rem;
+    }
+
+    .add-testimonial h3 {
+        font-size: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .testimonial-form {
+        padding: 1rem;
+    }
+
+    .form-group {
+        margin-bottom: 1rem;
+    }
+
+    .form-group label {
+        font-size: 0.9rem;
+        margin-bottom: 0.3rem;
+    }
+
+    .form-group input,
+    .form-group textarea {
+        padding: 0.6rem;
+        font-size: 0.9rem;
+    }
+
+    .star-rating {
+        font-size: 1.5rem;
+    }
+
+    .btn {
+        width: 100%;
+        padding: 0.8rem;
+        font-size: 0.9rem;
+    }
+}
+
+/* Media Queries pour très petits écrans */
+@media screen and (max-width: 480px) {
+    .logo h1 {
+        font-size: 1.5rem;
+    }
+
+    .hero h2 {
+        font-size: 1.5rem;
+    }
+
+    .benefits h3,
+    .favorites h3,
+    .why-bioskin h3,
+    .testimonials h3,
+    .add-testimonial h3 {
+        font-size: 1.3rem;
+    }
+
+    .benefit-card h4,
+    .feature-card h4 {
+        font-size: 1rem;
+    }
+
+    .benefit-card p,
+    .feature-card p,
+    .testimonial-text {
+        font-size: 0.85rem;
     }
 }

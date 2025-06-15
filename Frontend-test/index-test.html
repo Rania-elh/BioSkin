@@ -1,132 +1,159 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>BioSkin - Test</title>
-	<link rel="stylesheet" href="style.css">
-	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-</head>
-<body>
-	<header>
-		<nav class="navbar">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="BioSkin - Créez vos propres recettes de soins naturels personnalisés pour votre peau">
+		<meta name="keywords" content="soins naturels, cosmétiques maison, recettes beauté, soins personnalisés">
+		<title>BioSkin - Soins naturels personnalisés</title>
+		<link rel="stylesheet" href="style.css">
+		<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+	</head>
+	<body>
+		<header>
 			<div class="logo">
-				<a href="index-test.html">BioSkin</a>
+				<h1>BioSkin</h1>
 			</div>
-			<ul class="nav-links">
-				<li><a href="index-test.html" class="active">Accueil</a></li>
-				<li><a href="creer-recette-test.html">Créer votre recette</a></li>
-				<li><a href="favoris.html">Favoris</a></li>
-				<li><a href="login.html">Connexion</a></li>
-			</ul>
-		</nav>
-	</header>
-
-	<main>
-		<section class="hero">
-			<div class="hero-content">
-				<h1>Découvrez la beauté naturelle</h1>
-				<p>Créez vos propres soins de beauté personnalisés avec des ingrédients 100% naturels</p>
-				<a href="creer-recette-test.html" class="btn btn-primary">Créer ma recette</a>
+			<nav>
+				<ul>
+					<li><a href="index-test.html">Accueil</a></li>
+					<li><a href="creer-recette-test.html">Créer votre recette</a></li>
+					<li><a href="favoris.html">Favoris</a></li>
+				</ul>
+			</nav>
+			<div class="user-icon">
+				<a href="profil.html">Mon profil</a>
 			</div>
-		</section>
+		</header>
 
-		<section class="benefits">
-			<h2>Les bienfaits des soins naturels</h2>
-			<div class="benefits-grid">
-				<div class="benefit-card">
-					<h3>Respect de la peau</h3>
-					<p>Des ingrédients doux et naturels qui respectent votre peau</p>
-				</div>
-				<div class="benefit-card">
-					<h3>Transparence</h3>
-					<p>Vous savez exactement ce que vous appliquez sur votre peau</p>
-				</div>
-				<div class="benefit-card">
-					<h3>Efficacité prouvée</h3>
-					<p>Des résultats visibles grâce à des actifs naturels puissants</p>
-				</div>
-				<div class="benefit-card">
-					<h3>Durabilité</h3>
-					<p>Des soins respectueux de l'environnement</p>
-				</div>
-			</div>
-		</section>
+		<main>
+			<section class="hero">
+				<h2>Créez votre propre recette</h2>
+				<a href="creer-recette-test.html" class="btn">Trouver ma recette idéale</a>
+			</section>
 
-		<section class="why-choose">
-			<h2>Pourquoi choisir BioSkin ?</h2>
-			<div class="features-grid">
-				<div class="feature-card">
-					<h3>Personnalisation</h3>
-					<p>Créez des soins adaptés à votre type de peau et vos besoins</p>
-				</div>
-				<div class="feature-card">
-					<h3>Qualité</h3>
-					<p>Des ingrédients sélectionnés avec soin pour leur efficacité</p>
-				</div>
-				<div class="feature-card">
-					<h3>Expertise</h3>
-					<p>Des conseils personnalisés pour des résultats optimaux</p>
-				</div>
-			</div>
-		</section>
+			<section class="phrases">
+				<p>Prenez soin de votre peau grâce à des recettes 100 % naturelles, personnalisées selon votre type de peau, vos objectifs et les ingrédients que vous avez déjà chez vous. Plus besoin de produits industriels : laissez la nature révéler votre beauté.</p>
+			</section>
 
-		<section class="testimonials">
-			<h2>Ce qu'en disent nos utilisateurs</h2>
-			<div class="testimonials-grid">
-				<div class="testimonial-card">
-					<p class="testimonial-text">"J'ai enfin trouvé des soins qui correspondent vraiment à ma peau sensible. Les résultats sont incroyables !"</p>
-					<p class="testimonial-author">- Sophie M.</p>
-				</div>
-				<div class="testimonial-card">
-					<p class="testimonial-text">"La personnalisation des recettes est géniale. Je peux adapter mes soins selon mes besoins du moment."</p>
-					<p class="testimonial-author">- Julie L.</p>
-				</div>
-				<div class="testimonial-card">
-					<p class="testimonial-text">"Des produits naturels qui fonctionnent vraiment. Ma peau n'a jamais été aussi belle !"</p>
-					<p class="testimonial-author">- Marie D.</p>
-				</div>
-			</div>
-		</section>
-
-		<section class="testimonial-form">
-			<h2>Partagez votre expérience</h2>
-			<form class="testimonial-form-content">
-				<div class="form-group">
-					<label for="name">Votre nom</label>
-					<input type="text" id="name" name="name" required>
-				</div>
-				<div class="form-group">
-					<label>Votre note</label>
-					<div class="rating">
-						<input type="radio" id="star5" name="rating" value="5">
-						<label for="star5">★</label>
-						<input type="radio" id="star4" name="rating" value="4">
-						<label for="star4">★</label>
-						<input type="radio" id="star3" name="rating" value="3">
-						<label for="star3">★</label>
-						<input type="radio" id="star2" name="rating" value="2">
-						<label for="star2">★</label>
-						<input type="radio" id="star1" name="rating" value="1">
-						<label for="star1">★</label>
+			<section class="benefits">
+				<h3>Les bienfaits des soins naturels</h3>
+				<div class="benefits-grid">
+					<div class="benefit-card">
+						<h4>Respect de la peau</h4>
+						<p>Les ingrédients naturels sont plus doux et respectent le pH naturel de votre peau, évitant ainsi les irritations et les réactions allergiques.</p>
+					</div>
+					<div class="benefit-card">
+						<h4>Transparence</h4>
+						<p>Vous savez exactement ce que vous appliquez sur votre peau, sans ingrédients controversés ou nocifs.</p>
+					</div>
+					<div class="benefit-card">
+						<h4>Efficacité prouvée</h4>
+						<p>Les actifs naturels comme l'aloe vera, l'huile d'argan ou l'huile de jojoba sont reconnus pour leurs propriétés bénéfiques.</p>
+					</div>
+					<div class="benefit-card">
+						<h4>Durabilité</h4>
+						<p>Les soins naturels sont souvent plus concentrés et plus efficaces sur le long terme, sans créer de dépendance.</p>
 					</div>
 				</div>
-				<div class="form-group">
-					<label for="comment">Votre témoignage</label>
-					<textarea id="comment" name="comment" rows="4" required></textarea>
-				</div>
-				<button type="submit" class="btn btn-primary">Envoyer</button>
-			</form>
-		</section>
-	</main>
+			</section>
 
-	<footer>
-		<div class="footer-content">
+			<section class="favorites">
+				<h3>Recettes préférées des utilisateurs</h3>
+				<ul>
+					<li>Masque purifiant à l'argile verte</li>
+					<li>Sérum éclat à la vitamine C</li>
+					<li>Gommage doux au sucre et miel</li>
+					<li>Crème de nuit nourrissante au karité</li>
+					<li>Tonique apaisant à la rose</li>
+					<li>Masque purifiant à l'argile verte</li>
+					<li>Sérum éclat à la vitamine C</li>
+					<li>Gommage doux au sucre et miel</li>
+					<li>Crème de nuit nourrissante au karité</li>
+					<li>Tonique apaisant à la rose</li>
+				</ul>
+			</section>
+
+			<section class="why-bioskin">
+				<h3>Pourquoi choisir BioSkin ?</h3>
+				<div class="features-grid">
+					<div class="feature-card">
+						<h4>Personnalisé</h4>
+						<p>Créez des soins adaptés à votre type de peau et à vos besoins spécifiques.</p>
+					</div>
+					<div class="feature-card">
+						<h4>Économique</h4>
+						<p>Réalisez des soins de qualité à moindre coût avec des ingrédients simples.</p>
+					</div>
+					<div class="feature-card">
+						<h4>Naturel</h4>
+						<p>Utilisez uniquement des ingrédients naturels, sans produits chimiques ni conservateurs.</p>
+					</div>
+					<div class="feature-card">
+						<h4>Écologique</h4>
+						<p>Réduisez votre impact environnemental en créant vos propres produits.</p>
+					</div>
+				</div>
+			</section>
+
+			<section class="testimonials">
+				<h3>Avis de nos utilisateurs</h3>
+				<div class="testimonials-grid">
+					<div class="testimonial-card">
+						<div class="rating">★★★★★</div>
+						<p class="testimonial-text">"Les recettes sont faciles à suivre et les résultats sont incroyables !"</p>
+						<p class="testimonial-author">- Assia L.</p>
+					</div>
+					<div class="testimonial-card">
+						<div class="rating">★★★★★</div>
+						<p class="testimonial-text">"Je suis ravie de pouvoir utiliser des produits 100% naturels. Je sais exactement ce que j'applique dessus."</p>
+						<p class="testimonial-author">- Dini E.</p>
+					</div>
+					<div class="testimonial-card">
+						<div class="rating">★★★★★</div>
+						<p class="testimonial-text">"L'application est intuitive et les recettes sont variées. J'ai pu créer des soins pour toute ma famille avec les ingrédients que j'avais déjà."</p>
+						<p class="testimonial-author">- Julie M.</p>
+					</div>
+				</div>
+			</section>
+
+			<section class="add-testimonial">
+				<h3>Partagez votre expérience</h3>
+				<form class="testimonial-form">
+					<div class="form-group">
+						<label for="name">Votre nom</label>
+						<input type="text" id="name" name="name" required>
+					</div>
+					<div class="form-group">
+						<label for="rating">Votre note</label>
+						<div class="star-rating">
+							<input type="radio" id="star5" name="rating" value="5" required>
+							<label for="star5">★</label>
+							<input type="radio" id="star4" name="rating" value="4">
+							<label for="star4">★</label>
+							<input type="radio" id="star3" name="rating" value="3">
+							<label for="star3">★</label>
+							<input type="radio" id="star2" name="rating" value="2">
+							<label for="star2">★</label>
+							<input type="radio" id="star1" name="rating" value="1">
+							<label for="star1">★</label>
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="testimonial">Votre avis</label>
+						<textarea id="testimonial" name="testimonial" rows="4" required placeholder="Partagez votre expérience avec BioSkin..."></textarea>
+					</div>
+					<button type="submit" class="btn">Envoyer mon avis</button>
+				</form>
+			</section>
+
+		</main>
+
+		<footer>
 			<div class="footer-links">
 				<p>Contact : <a href="mailto:contact@bioskin.com">contact@bioskin.com</a></p>
 			</div>
 			<p>&copy; 2025 BioSkin. Tous droits réservés.</p>
-		</div>
-	</footer>
-</body>
+		</footer>
+	</body>
 </html> 
