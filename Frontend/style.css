@@ -1933,3 +1933,61 @@ footer {
 .small-footer .footer-text a:hover {
     color: var(--brown-dark);
 }
+
+/* Styles pour le conteneur de mot de passe */
+.password-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.password-container input {
+    width: 100%;
+    padding-right: 50px; /* Espace pour le bouton */
+}
+
+.password-toggle {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.password-toggle:hover {
+    background-color: var(--beige-medium);
+}
+
+.password-toggle:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px var(--brown-medium);
+}
+
+.eye-icon {
+    color: var(--brown-medium);
+    transition: all 0.3s ease;
+}
+
+.password-toggle:hover .eye-icon {
+    color: var(--brown-dark);
+}
+
+/* Responsive pour le mot de passe */
+@media (max-width: 768px) {
+    .password-toggle {
+        padding: 8px;
+    }
+    
+    .eye-icon {
+        width: 18px;
+        height: 18px;
+    }
+}
