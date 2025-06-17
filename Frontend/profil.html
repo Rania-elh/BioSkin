@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="BioSkin - Mon profil utilisateur">
+    <title>Mon Profil - BioSkin</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>BioSkin</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="creer-recette.html">Créer votre recette</a></li>
+                <li><a href="favoris.html">Favoris</a></li>
+            </ul>
+        </nav>
+        <div class="user-icon">
+            <a href="profil.html">Mon profil</a>
+        </div>
+    </header>
+
+    <main>
+        <div class="profil-container">
+            <h2>Mon Profil</h2>
+            
+            <div class="profil-info">
+                <div class="profil-section">
+                    <h3>Informations personnelles</h3>
+                    <div class="info-grid">
+                        <div class="info-item">
+                            <label>Nom :</label>
+                            <input type="text" placeholder="Votre nom">
+                        </div>
+                        <div class="info-item">
+                            <label>Prénom :</label>
+                            <input type="text" placeholder="Votre prénom">
+                        </div>
+                        <div class="info-item">
+                            <label>Email :</label>
+                            <input type="email" placeholder="votre.email@exemple.com">
+                        </div>
+                        <div class="info-item">
+                            <label>Mot de passe :</label>
+                            <input type="password" placeholder="Votre mot de passe">
+                        </div>
+                        <div class="info-item">
+                            <label>Date de naissance :</label>
+                            <input type="date">
+                        </div>
+                    </div>
+                    <button class="btn">Sauvegarder mes informations</button>
+                </div>
+
+                <div class="profil-section">
+                    <h3>Mes recettes favorites</h3>
+                    <div class="favorites-grid">
+                    </div>
+                </div>
+
+                <div class="profil-section">
+                    <h3>Historique des recettes créées</h3>
+                    <div class="history-list">
+                    </div>
+                </div>
+
+                <div class="profil-section">
+                    <h3>Statistiques</h3>
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-number">12</div>
+                            <div class="stat-label">Recettes créées</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">8</div>
+                            <div class="stat-label">Recettes favorites</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">4.8</div>
+                            <div class="stat-label">Note moyenne</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">25</div>
+                            <div class="stat-label">Jours d'utilisation</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-links">
+            <p>Contact : <a href="mailto:contact@bioskin.com">contact@bioskin.com</a></p>
+        </div>
+        <p>&copy; 2025 BioSkin. Tous droits réservés.</p>
+    </footer>
+</body>
+</html> 
