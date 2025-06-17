@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Créer votre recette - BioSkin</title>
+	<title>Créer votre recette - BioSkin Test</title>
 	<link rel="stylesheet" href="style.css">
 	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
@@ -14,13 +14,13 @@
 		</div>
 		<nav>
 			<ul>
-				<li><a href="index.html">Accueil</a></li>
-				<li><a href="creer-recette.html" class="active">Créer votre recette</a></li>
+				<li><a href="index-test.html">Accueil</a></li>
+				<li><a href="creer-recette-test.html" class="active">Créer votre recette</a></li>
 				<li><a href="favoris.html">Favoris</a></li>
 			</ul>
 		</nav>
 		<div class="user-icon">
-			<a href="profil.html">Mon profil</a>
+			<a href="login.html">Mon profil</a>
 		</div>
 	</header>
 
@@ -32,6 +32,38 @@
 			</div>
 
 			<form class="recipe-form">
+				<div class="form-section skin-scanner-section">
+					<div class="section-header">
+						<p class="section-description">Cliquez sur les zones que vous souhaitez traiter</p>
+					</div>
+					<div class="skin-scanner">
+						<div class="face-container">
+							<svg class="face-svg" viewBox="0 0 768 768" xmlns="http://www.w3.org/2000/svg">
+								<!-- Image de fond du visage féminin -->
+								<image href="Visage.png" width="768" height="768" preserveAspectRatio="xMidYMid meet"/>
+								
+								<!-- Zones cliquables transparentes superposées -->
+								<!-- Visage entier -->
+								<circle class="face-zone" data-zone="face" cx="384" cy="384" r="300"/>
+								
+								<!-- Yeux -->
+								<ellipse class="face-zone" data-zone="eyes" cx="310" cy="330" rx="50" ry="25"/>
+								<ellipse class="face-zone" data-zone="eyes" cx="458" cy="330" rx="50" ry="25"/>
+								
+								<!-- Nez -->
+								<ellipse class="face-zone" data-zone="nose" cx="384" cy="370" rx="40" ry="100"/>
+								
+								<!-- Bouche -->
+								<ellipse class="face-zone" data-zone="mouth" cx="384" cy="490" rx="60" ry="30"/>
+							</svg>
+						</div>
+						<div class="selected-zones">
+							<h4>Zones sélectionnées :</h4>
+							<div class="zones-list"></div>
+						</div>
+					</div>
+				</div>
+
 				<div class="form-section">
 					<div class="section-header">
 						<h3>Votre type de peau</h3>
@@ -187,38 +219,135 @@
 	</footer>
 
 	<script>
+		// Gestion du scanner de peau
+		const faceZones = document.querySelectorAll('.face-zone');
+		const zonesList = document.querySelector('.zones-list');
+		const selectedZones = new Set();
+
+		faceZones.forEach(zone => {
+			zone.addEventListener('click', () => {
+				const zoneId = zone.getAttribute('data-zone');
+				if (selectedZones.has(zoneId)) {
+					selectedZones.delete(zoneId);
+					zone.classList.remove('selected');
+				} else {
+					selectedZones.add(zoneId);
+					zone.classList.add('selected');
+				}
+				updateZonesList();
+			});
+		});
+
+		function updateZonesList() {
+			zonesList.innerHTML = '';
+			selectedZones.forEach(zone => {
+				const zoneElement = document.createElement('div');
+				zoneElement.className = 'selected-zone';
+				zoneElement.innerHTML = `
+					<span>${getZoneName(zone)}</span>
+					<button class="remove-zone" data-zone="${zone}">×</button>
+				`;
+				zonesList.appendChild(zoneElement);
+			});
+
+			// Ajouter les événements de suppression
+			document.querySelectorAll('.remove-zone').forEach(button => {
+				button.addEventListener('click', (e) => {
+					const zone = e.target.getAttribute('data-zone');
+					selectedZones.delete(zone);
+					document.querySelector(`.face-zone[data-zone="${zone}"]`).classList.remove('selected');
+					updateZonesList();
+				});
+			});
+		}
+
+		function getZoneName(zone) {
+			const zoneNames = {
+				'face': 'Visage',
+				'front': 'Front',
+				'cheeks': 'Joues',
+				'chin': 'Menton',
+				'nose': 'Nez',
+				'eyes': 'Yeux',
+				'mouth': 'Bouche',
+				'temples': 'Temples'
+			};
+			return zoneNames[zone] || zone;
+		}
+
 		// Gestion des ingrédients
 		const ingredientSearch = document.getElementById('ingredient-search');
 		const addIngredientBtn = document.querySelector('.add-ingredient-btn');
 		const ingredientsList = document.querySelector('.ingredients-list');
 
+		// Modification du script pour ajouter les bienfaits des ingrédients
+		const ingredientBenefits = {
+			'Aloe Vera': {
+				title: 'Bienfaits de l\'Aloe Vera',
+				benefits: [
+					'Hydratation intense de la peau',
+					'Apaisement des irritations',
+					'Régénération cellulaire',
+					'Anti-inflammatoire naturel'
+				]
+			},
+			'Huile d\'Argan': {
+				title: 'Bienfaits de l\'Huile d\'Argan',
+				benefits: [
+					'Nourrissement profond',
+					'Anti-âge naturel',
+					'Protection de la barrière cutanée',
+					'Régulation du sébum'
+				]
+			},
+			'Huile de Jojoba': {
+				title: 'Bienfaits de l\'Huile de Jojoba',
+				benefits: [
+					'Hydratation non comédogène',
+					'Régulation du sébum',
+					'Anti-bactérien naturel',
+					'Apaisement des peaux sensibles'
+				]
+			},
+			'Miel': {
+				title: 'Bienfaits du Miel',
+				benefits: [
+					'Antibactérien naturel',
+					'Hydratation profonde',
+					'Apaisement des irritations',
+					'Éclat du teint'
+				]
+			}
+		};
+
+		// Modification de la fonction d'ajout d'ingrédient
 		addIngredientBtn.addEventListener('click', () => {
 			const ingredient = ingredientSearch.value.trim();
 			if (ingredient) {
 				const ingredientCard = document.createElement('div');
 				ingredientCard.className = 'ingredient-card';
+				
+				// Vérifier si nous avons des bienfaits pour cet ingrédient
+				const benefits = ingredientBenefits[ingredient] || {
+					title: `Bienfaits de ${ingredient}`,
+					benefits: ['Bienfaits à découvrir']
+				};
+
 				ingredientCard.innerHTML = `
 					<div class="card-content">
 						<div class="card-header">
 							<h4>${ingredient}</h4>
+							<button type="button" class="remove-ingredient">×</button>
 						</div>
-						<div class="ingredient-details">
-							<div class="property">
-								<span class="property-name">Hydratation</span>
-								<div class="property-bar">
-									<div class="property-fill"></div>
-								</div>
-							</div>
-							<div class="property">
-								<span class="property-name">Apaisement</span>
-								<div class="property-bar">
-									<div class="property-fill"></div>
-								</div>
-							</div>
+						<div class="ingredient-benefits">
+							<h5>${benefits.title}</h5>
+							<ul>
+								${benefits.benefits.map(benefit => `<li>${benefit}</li>`).join('')}
+							</ul>
 						</div>
-						<button type="button" class="remove-ingredient">×</button>
 					</div>
 				`;
+				
 				ingredientsList.appendChild(ingredientCard);
 				ingredientSearch.value = '';
 
@@ -239,5 +368,335 @@
 			});
 		});
 	</script>
+
+	<style>
+	/* Styles de base */
+	:root {
+		--brown-light: #D2B48C;
+		--brown-medium: #8B4513;
+		--brown-dark: #654321;
+		--beige-light: #F5F5DC;
+	}
+
+	/* Styles de la barre de navigation */
+	header {
+		background-color: white;
+		padding: 1rem 5%;
+		box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	.logo h1 {
+		color: var(--brown-medium);
+		font-size: 2.2rem;
+		font-weight: 700;
+		letter-spacing: 1px;
+	}
+
+	nav ul {
+		display: flex;
+		gap: 2rem;
+		list-style: none;
+	}
+
+	nav a {
+		color: var(--brown-medium);
+		text-decoration: none;
+		font-weight: 500;
+		transition: color 0.3s ease;
+		padding: 0.5rem 1rem;
+		border-radius: 20px;
+	}
+
+	nav a:hover {
+		color: var(--brown-dark);
+		background-color: var(--beige-light);
+	}
+
+	.user-icon {
+		font-size: 0.9em;
+	}
+
+	.user-icon a {
+		color: var(--brown-medium);
+		text-decoration: none;
+		padding: 0.5rem 1rem;
+		border-radius: 20px;
+		transition: all 0.3s ease;
+	}
+
+	.user-icon a:hover {
+		background-color: var(--beige-light);
+		color: var(--brown-dark);
+	}
+
+	/* Styles des cartes */
+	.skin-type-grid, .goals-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+		gap: 1rem;
+		padding: 1rem;
+	}
+
+	.skin-type-card, .goal-card {
+		background: white;
+		border-radius: 10px;
+		padding: 1rem;
+		box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+		cursor: pointer;
+		transition: all 0.3s ease;
+	}
+
+	.skin-type-card .card-content, .goal-card .card-content {
+		padding: 0.5rem;
+	}
+
+	.skin-type-card h4, .goal-card h4 {
+		font-size: 1.1rem;
+		margin-bottom: 0.5rem;
+	}
+
+	.skin-type-card p, .goal-card p {
+		font-size: 0.9rem;
+		color: #666;
+		margin-bottom: 0.5rem;
+	}
+
+	.skin-type-card .card-details ul {
+		font-size: 0.85rem;
+		padding-left: 1rem;
+	}
+
+	.skin-type-card .card-details li {
+		margin: 0.3rem 0;
+	}
+
+	/* Styles existants */
+	.face-zone {
+		cursor: pointer;
+		transition: all 0.3s ease;
+		fill: transparent;
+		stroke: none;
+	}
+
+	.face-zone:hover {
+		fill: rgba(255, 255, 255, 0.1);
+		stroke: rgba(255, 255, 255, 0.2);
+		stroke-width: 1;
+	}
+
+	.face-zone.selected {
+		fill: rgba(255, 255, 255, 0.15);
+		stroke: rgba(255, 255, 255, 0.3);
+		stroke-width: 1;
+	}
+
+	.ingredient-card {
+		background: #fff;
+		border-radius: 8px;
+		padding: 15px;
+		margin: 10px 0;
+		box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+	}
+
+	.ingredient-benefits {
+		margin-top: 10px;
+		padding: 10px;
+		background: #f8f9fa;
+		border-radius: 6px;
+		font-size: 0.9em;
+		color: #666;
+	}
+
+	.ingredient-benefits h5 {
+		color: #333;
+		margin-bottom: 5px;
+	}
+
+	.ingredient-benefits ul {
+		margin: 0;
+		padding-left: 20px;
+	}
+
+	.ingredient-benefits li {
+		margin: 3px 0;
+	}
+
+	/* Styles du scanner de peau */
+	.skin-scanner {
+		display: flex;
+		flex-direction: row;
+		align-items: flex-start;
+		gap: 2rem;
+		padding: 2rem;
+	}
+
+	.face-container {
+		width: 60%;
+		max-width: 600px;
+	}
+
+	.selected-zones {
+		width: 40%;
+		background: white;
+		padding: 1.5rem;
+		border-radius: 10px;
+		box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+	}
+
+	.selected-zones h4 {
+		margin-bottom: 1rem;
+		color: var(--brown-medium);
+	}
+
+	.zones-list {
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
+	}
+
+	.selected-zone {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		background: var(--beige-light);
+		padding: 0.5rem 1rem;
+		border-radius: 20px;
+	}
+
+	.remove-zone {
+		background: none;
+		border: none;
+		color: var(--brown-medium);
+		cursor: pointer;
+		font-size: 1.2rem;
+		padding: 0 0.5rem;
+	}
+
+	/* Media Queries pour mobile */
+	@media screen and (max-width: 768px) {
+		/* Navigation */
+		header {
+			flex-direction: column;
+			padding: 1rem;
+			gap: 1rem;
+		}
+
+		.logo h1 {
+			font-size: 1.8rem;
+		}
+
+		nav ul {
+			flex-direction: column;
+			align-items: center;
+			gap: 1rem;
+			width: 100%;
+		}
+
+		nav a {
+			display: block;
+			width: 100%;
+			text-align: center;
+			padding: 0.8rem;
+		}
+
+		.user-icon {
+			width: 100%;
+			text-align: center;
+		}
+
+		/* Grilles */
+		.skin-type-grid, .goals-grid {
+			grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+			padding: 0.8rem;
+			gap: 0.8rem;
+		}
+
+		.skin-type-card, .goal-card {
+			padding: 0.8rem;
+		}
+
+		/* Scanner de peau */
+		.skin-scanner {
+			flex-direction: column;
+			padding: 1rem;
+		}
+
+		.face-container {
+			width: 100%;
+		}
+
+		.selected-zones {
+			width: 100%;
+			padding: 1rem;
+		}
+
+		/* Formulaire */
+		.recipe-form {
+			padding: 1rem;
+		}
+
+		.section-header {
+			padding: 1rem;
+		}
+
+		.section-header h3 {
+			font-size: 1.5rem;
+		}
+
+		/* Ingrédients */
+		.ingredients-search {
+			padding: 1rem;
+		}
+
+		.search-container {
+			flex-direction: column;
+			gap: 1rem;
+		}
+
+		.search-container input {
+			width: 100%;
+		}
+
+		.add-ingredient-btn {
+			width: 100%;
+		}
+
+		/* Boutons */
+		.form-actions {
+			padding: 1rem;
+		}
+
+		.btn {
+			width: 100%;
+			padding: 1rem;
+		}
+	}
+
+	/* Media Queries pour très petits écrans */
+	@media screen and (max-width: 480px) {
+		.logo h1 {
+			font-size: 1.5rem;
+		}
+
+		.section-header h3 {
+			font-size: 1.3rem;
+		}
+
+		.skin-type-grid, .goals-grid {
+			grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+		}
+
+		.skin-type-card h4, .goal-card h4 {
+			font-size: 1rem;
+		}
+
+		.skin-type-card p, .goal-card p {
+			font-size: 0.85rem;
+		}
+	}
+	</style>
 </body>
 </html> 

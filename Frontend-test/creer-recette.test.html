@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Créer votre recette - BioSkin</title>
+	<link rel="stylesheet" href="style.css">
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+	<header>
+		<div class="logo">
+			<h1>BioSkin</h1>
+		</div>
+		<nav>
+			<ul>
+				<li><a href="index.html">Accueil</a></li>
+				<li><a href="creer-recette.html" class="active">Créer votre recette</a></li>
+				<li><a href="favoris.html">Favoris</a></li>
+			</ul>
+		</nav>
+		<div class="user-icon">
+			<a href="profil.html">Mon profil</a>
+		</div>
+	</header>
+
+	<main>
+		<section class="recipe-creator">
+			<div class="hero-section">
+				<h2>Créez votre recette personnalisée</h2>
+				<p class="subtitle">Découvrez la recette parfaite pour votre peau</p>
+			</div>
+
+			<form class="recipe-form">
+				<div class="form-section">
+					<div class="section-header">
+						<h3>Votre type de peau</h3>
+						<p class="section-description">Sélectionnez le type de peau qui vous correspond le mieux</p>
+					</div>
+					<div class="skin-type-grid">
+						<label class="skin-type-card" data-type="dry">
+							<input type="radio" name="skin-type" value="dry">
+							<div class="card-content">
+								<div class="card-header">
+									<h4>Peau sèche</h4>
+									<p>Tiraillements, desquamation</p>
+								</div>
+								<div class="card-details">
+									<ul>
+										<li>Tiraillements fréquents</li>
+										<li>Desquamation</li>
+										<li>Rugosité</li>
+									</ul>
+								</div>
+							</div>
+						</label>
+						<label class="skin-type-card" data-type="oily">
+							<input type="radio" name="skin-type" value="oily">
+							<div class="card-content">
+								<div class="card-header">
+									<h4>Peau grasse</h4>
+									<p>Brillance, pores dilatés</p>
+								</div>
+								<div class="card-details">
+									<ul>
+										<li>Brillance excessive</li>
+										<li>Pores dilatés</li>
+										<li>Imperfections</li>
+									</ul>
+								</div>
+							</div>
+						</label>
+						<label class="skin-type-card" data-type="combination">
+							<input type="radio" name="skin-type" value="combination">
+							<div class="card-content">
+								<div class="card-header">
+									<h4>Peau mixte</h4>
+									<p>Brillance en T, zones sèches</p>
+								</div>
+								<div class="card-details">
+									<ul>
+										<li>Brillance en T</li>
+										<li>Zones sèches</li>
+										<li>Équilibre à trouver</li>
+									</ul>
+								</div>
+							</div>
+						</label>
+						<label class="skin-type-card" data-type="sensitive">
+							<input type="radio" name="skin-type" value="sensitive">
+							<div class="card-content">
+								<div class="card-header">
+									<h4>Peau sensible</h4>
+									<p>Réactions, rougeurs</p>
+								</div>
+								<div class="card-details">
+									<ul>
+										<li>Réactions cutanées</li>
+										<li>Rougeurs</li>
+										<li>Picotements</li>
+									</ul>
+								</div>
+							</div>
+						</label>
+					</div>
+				</div>
+
+				<div class="form-section">
+					<div class="section-header">
+						<h3>Vos ingrédients disponibles</h3>
+						<p class="section-description">Ajoutez les ingrédients que vous avez chez vous</p>
+					</div>
+					<div class="ingredients-search">
+						<div class="search-container">
+							<input type="text" id="ingredient-search" placeholder="Ajoutez vos ingrédients (ex: Aloe Vera, Huile d'Argan...)">
+							<button type="button" class="add-ingredient-btn">
+								<span>Ajouter</span>
+							</button>
+						</div>
+						<div class="ingredients-list">
+							<!-- Les ingrédients seront ajoutés dynamiquement ici -->
+						</div>
+					</div>
+				</div>
+
+				<div class="form-section">
+					<div class="section-header">
+						<h3>Vos objectifs</h3>
+						<p class="section-description">Sélectionnez les résultats que vous souhaitez obtenir</p>
+					</div>
+					<div class="goals-grid">
+						<label class="goal-card" data-goal="hydratation">
+							<input type="checkbox" name="goals" value="hydratation">
+							<div class="card-content">
+								<div class="card-header">
+									<h4>Hydratation</h4>
+									<p>Nourrir et hydrater la peau</p>
+								</div>
+							</div>
+						</label>
+						<label class="goal-card" data-goal="anti-age">
+							<input type="checkbox" name="goals" value="anti-age">
+							<div class="card-content">
+								<div class="card-header">
+									<h4>Anti-âge</h4>
+									<p>Lutter contre les signes de l'âge</p>
+								</div>
+							</div>
+						</label>
+						<label class="goal-card" data-goal="acne">
+							<input type="checkbox" name="goals" value="acne">
+							<div class="card-content">
+								<div class="card-header">
+									<h4>Anti-imperfections</h4>
+									<p>Traiter l'acné et les imperfections</p>
+								</div>
+							</div>
+						</label>
+						<label class="goal-card" data-goal="brightening">
+							<input type="checkbox" name="goals" value="brightening">
+							<div class="card-content">
+								<div class="card-header">
+									<h4>Éclat</h4>
+									<p>Unifier et illuminer le teint</p>
+								</div>
+							</div>
+						</label>
+					</div>
+				</div>
+
+				<div class="form-actions">
+					<button type="submit" class="btn btn-primary">
+						<span class="btn-text">Générer ma recette</span>
+					</button>
+				</div>
+			</form>
+		</section>
+	</main>
+
+	<footer>
+		<div class="footer-content">
+			<div class="footer-links">
+				<p>Contact : <a href="mailto:contact@bioskin.com">contact@bioskin.com</a></p>
+			</div>
+			<p>&copy; 2025 BioSkin. Tous droits réservés.</p>
+		</div>
+	</footer>
+
+	<script>
+		// Gestion des ingrédients
+		const ingredientSearch = document.getElementById('ingredient-search');
+		const addIngredientBtn = document.querySelector('.add-ingredient-btn');
+		const ingredientsList = document.querySelector('.ingredients-list');
+
+		addIngredientBtn.addEventListener('click', () => {
+			const ingredient = ingredientSearch.value.trim();
+			if (ingredient) {
+				const ingredientCard = document.createElement('div');
+				ingredientCard.className = 'ingredient-card';
+				ingredientCard.innerHTML = `
+					<div class="card-content">
+						<div class="card-header">
+							<h4>${ingredient}</h4>
+						</div>
+						<div class="ingredient-details">
+							<div class="property">
+								<span class="property-name">Hydratation</span>
+								<div class="property-bar">
+									<div class="property-fill"></div>
+								</div>
+							</div>
+							<div class="property">
+								<span class="property-name">Apaisement</span>
+								<div class="property-bar">
+									<div class="property-fill"></div>
+								</div>
+							</div>
+						</div>
+						<button type="button" class="remove-ingredient">×</button>
+					</div>
+				`;
+				ingredientsList.appendChild(ingredientCard);
+				ingredientSearch.value = '';
+
+				// Ajouter l'événement de suppression
+				ingredientCard.querySelector('.remove-ingredient').addEventListener('click', () => {
+					ingredientCard.remove();
+				});
+			}
+		});
+
+		// Animation des cartes au survol
+		document.querySelectorAll('.skin-type-card, .goal-card').forEach(card => {
+			card.addEventListener('mouseenter', () => {
+				card.classList.add('hover');
+			});
+			card.addEventListener('mouseleave', () => {
+				card.classList.remove('hover');
+			});
+		});
+	</script>
+</body>
+</html> 
