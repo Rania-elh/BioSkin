@@ -5,155 +5,444 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta name="description" content="BioSkin - Créez vos propres recettes de soins naturels personnalisés pour votre peau">
 		<meta name="keywords" content="soins naturels, cosmétiques maison, recettes beauté, soins personnalisés">
+		<meta name="author" content="BioSkin">
+		<meta name="robots" content="index, follow">
 		<title>BioSkin - Soins naturels personnalisés</title>
+		
+		<!-- Preload critical resources -->
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link rel="preload" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" as="style">
+		
+		<!-- Stylesheets -->
 		<link rel="stylesheet" href="style.css">
-		<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+		
+		<!-- Favicon -->
+		<link rel="icon" type="image/x-icon" href="/favicon.ico">
 	</head>
 	<body>
-		<header>
-			<div class="logo">
-				<h1>BioSkin</h1>
-			</div>
-			<nav>
-				<ul>
-					<li><a href="index-test.html">Accueil</a></li>
-					<li><a href="creer-recette-test.html">Créer votre recette</a></li>
-					<li><a href="favoris.html">Favoris</a></li>
-				</ul>
-			</nav>
-			<div class="user-icon">
-				<a href="profil.html">Mon profil</a>
+		<!-- Skip to main content for accessibility -->
+		<a href="#main-content" class="skip-link">Passer au contenu principal</a>
+		
+		<!-- Header -->
+		<header class="header" role="banner">
+			<div class="nav-container">
+				<div class="logo">
+					<h1><i class="fas fa-leaf" aria-hidden="true"></i> BioSkin</h1>
+				</div>
+				<nav class="nav-menu" id="nav-menu" role="navigation" aria-label="Navigation principale">
+					<ul class="nav-list">
+						<li class="nav-item"><a href="index-test.html" class="nav-link active" aria-current="page">Accueil</a></li>
+						<li class="nav-item"><a href="creer-recette-test.html" class="nav-link">Créer</a></li>
+						<li class="nav-item"><a href="favoris.html" class="nav-link">Favoris</a></li>
+						<li class="nav-item"><a href="profil.html" class="nav-link">Profil</a></li>
+					</ul>
+				</nav>
+				<button class="nav-toggle" id="nav-toggle" aria-label="Menu de navigation" aria-expanded="false" aria-controls="nav-menu">
+					<i class="fas fa-bars" aria-hidden="true"></i>
+				</button>
 			</div>
 		</header>
 
-		<main>
-			<section class="hero">
-				<h2>Créez votre propre recette</h2>
-				<a href="creer-recette-test.html" class="btn">Trouver ma recette idéale</a>
-			</section>
-
-			<section class="phrases">
-				<p>Prenez soin de votre peau grâce à des recettes 100 % naturelles, personnalisées selon votre type de peau, vos objectifs et les ingrédients que vous avez déjà chez vous. Plus besoin de produits industriels : laissez la nature révéler votre beauté.</p>
-			</section>
-
-			<section class="benefits">
-				<h3>Les bienfaits des soins naturels</h3>
-				<div class="benefits-grid">
-					<div class="benefit-card">
-						<h4>Respect de la peau</h4>
-						<p>Les ingrédients naturels sont plus doux et respectent le pH naturel de votre peau, évitant ainsi les irritations et les réactions allergiques.</p>
-					</div>
-					<div class="benefit-card">
-						<h4>Transparence</h4>
-						<p>Vous savez exactement ce que vous appliquez sur votre peau, sans ingrédients controversés ou nocifs.</p>
-					</div>
-					<div class="benefit-card">
-						<h4>Efficacité prouvée</h4>
-						<p>Les actifs naturels comme l'aloe vera, l'huile d'argan ou l'huile de jojoba sont reconnus pour leurs propriétés bénéfiques.</p>
-					</div>
-					<div class="benefit-card">
-						<h4>Durabilité</h4>
-						<p>Les soins naturels sont souvent plus concentrés et plus efficaces sur le long terme, sans créer de dépendance.</p>
-					</div>
+		<main id="main-content" role="main">
+			<!-- Hero section -->
+			<section class="hero" role="banner">
+				<div class="hero-background">
+					<div class="hero-pattern"></div>
+					<div class="hero-gradient"></div>
 				</div>
-			</section>
-
-			<section class="favorites">
-				<h3>Recettes préférées des utilisateurs</h3>
-				<ul>
-					<li>Masque purifiant à l'argile verte</li>
-					<li>Sérum éclat à la vitamine C</li>
-					<li>Gommage doux au sucre et miel</li>
-					<li>Crème de nuit nourrissante au karité</li>
-					<li>Tonique apaisant à la rose</li>
-					<li>Masque purifiant à l'argile verte</li>
-					<li>Sérum éclat à la vitamine C</li>
-					<li>Gommage doux au sucre et miel</li>
-					<li>Crème de nuit nourrissante au karité</li>
-					<li>Tonique apaisant à la rose</li>
-				</ul>
-			</section>
-
-			<section class="why-bioskin">
-				<h3>Pourquoi choisir BioSkin ?</h3>
-				<div class="features-grid">
-					<div class="feature-card">
-						<h4>Personnalisé</h4>
-						<p>Créez des soins adaptés à votre type de peau et à vos besoins spécifiques.</p>
-					</div>
-					<div class="feature-card">
-						<h4>Économique</h4>
-						<p>Réalisez des soins de qualité à moindre coût avec des ingrédients simples.</p>
-					</div>
-					<div class="feature-card">
-						<h4>Naturel</h4>
-						<p>Utilisez uniquement des ingrédients naturels, sans produits chimiques ni conservateurs.</p>
-					</div>
-					<div class="feature-card">
-						<h4>Écologique</h4>
-						<p>Réduisez votre impact environnemental en créant vos propres produits.</p>
-					</div>
-				</div>
-			</section>
-
-			<section class="testimonials">
-				<h3>Avis de nos utilisateurs</h3>
-				<div class="testimonials-grid">
-					<div class="testimonial-card">
-						<div class="rating">★★★★★</div>
-						<p class="testimonial-text">"Les recettes sont faciles à suivre et les résultats sont incroyables !"</p>
-						<p class="testimonial-author">- Assia L.</p>
-					</div>
-					<div class="testimonial-card">
-						<div class="rating">★★★★★</div>
-						<p class="testimonial-text">"Je suis ravie de pouvoir utiliser des produits 100% naturels. Je sais exactement ce que j'applique dessus."</p>
-						<p class="testimonial-author">- Dini E.</p>
-					</div>
-					<div class="testimonial-card">
-						<div class="rating">★★★★★</div>
-						<p class="testimonial-text">"L'application est intuitive et les recettes sont variées. J'ai pu créer des soins pour toute ma famille avec les ingrédients que j'avais déjà."</p>
-						<p class="testimonial-author">- Julie M.</p>
-					</div>
-				</div>
-			</section>
-
-			<section class="add-testimonial">
-				<h3>Partagez votre expérience</h3>
-				<form class="testimonial-form">
-					<div class="form-group">
-						<label for="name">Votre nom</label>
-						<input type="text" id="name" name="name" required>
-					</div>
-					<div class="form-group">
-						<label for="rating">Votre note</label>
-						<div class="star-rating">
-							<input type="radio" id="star5" name="rating" value="5" required>
-							<label for="star5">★</label>
-							<input type="radio" id="star4" name="rating" value="4">
-							<label for="star4">★</label>
-							<input type="radio" id="star3" name="rating" value="3">
-							<label for="star3">★</label>
-							<input type="radio" id="star2" name="rating" value="2">
-							<label for="star2">★</label>
-							<input type="radio" id="star1" name="rating" value="1">
-							<label for="star1">★</label>
+				<div class="hero-content">
+					<div class="hero-text">
+						<h2 class="hero-title">
+							<span class="hero-line">Révélez votre</span>
+							<span class="hero-line highlight">beauté naturelle</span>
+						</h2>
+						<p class="hero-subtitle">Découvrez l'art des soins naturels personnalisés. Créez des recettes uniques avec des ingrédients que vous avez déjà chez vous.</p>
+						<div class="hero-cta">
+							<a href="creer-recette-test.html" class="btn btn-primary">
+								<span>Commencer l'aventure</span>
+								<i class="fas fa-arrow-right" aria-hidden="true"></i>
+							</a>
+							<a href="#features" class="btn btn-outline">
+								<span>Découvrir</span>
+							</a>
 						</div>
 					</div>
-					<div class="form-group">
-						<label for="testimonial">Votre avis</label>
-						<textarea id="testimonial" name="testimonial" rows="4" required placeholder="Partagez votre expérience avec BioSkin..."></textarea>
+					<div class="hero-visual">
+						<div class="floating-elements">
+							<div class="floating-card card-1">
+								<i class="fas fa-seedling" aria-hidden="true"></i>
+								<span>100% Naturel</span>
+							</div>
+							<div class="floating-card card-2">
+								<i class="fas fa-user-check" aria-hidden="true"></i>
+								<span>Personnalisé</span>
+							</div>
+							<div class="floating-card card-3">
+								<i class="fas fa-heart" aria-hidden="true"></i>
+								<span>Efficace</span>
+							</div>
+						</div>
+						<div class="hero-stats">
+							<div class="stat-item">
+								<div class="stat-number" data-target="10000">0</div>
+								<div class="stat-label">Utilisateurs</div>
+							</div>
+							<div class="stat-item">
+								<div class="stat-number" data-target="500">0</div>
+								<div class="stat-label">Recettes</div>
+							</div>
+							<div class="stat-item">
+								<div class="stat-number" data-target="4.8">0</div>
+								<div class="stat-label">Note moyenne</div>
+							</div>
+						</div>
 					</div>
-					<button type="submit" class="btn">Envoyer mon avis</button>
-				</form>
+				</div>
+				<div class="scroll-indicator">
+					<div class="scroll-dot"></div>
+				</div>
 			</section>
 
+			<!-- Features section -->
+			<section class="features" id="features" role="region" aria-labelledby="features-title">
+				<div class="container">
+					<header class="section-header">
+						<h3 id="features-title">L'excellence naturelle</h3>
+						<p>Une approche révolutionnaire des soins personnalisés</p>
+					</header>
+					<div class="features-grid" role="list">
+						<article class="feature-card" role="listitem" data-aos="fade-up">
+							<div class="feature-icon">
+								<i class="fas fa-magic" aria-hidden="true"></i>
+							</div>
+							<h4>IA Intelligente</h4>
+							<p>Notre intelligence artificielle analyse votre peau et vos ingrédients pour créer des recettes parfaitement adaptées à vos besoins.</p>
+						</article>
+						<article class="feature-card" role="listitem" data-aos="fade-up" data-aos-delay="100">
+							<div class="feature-icon">
+								<i class="fas fa-clock" aria-hidden="true"></i>
+							</div>
+							<h4>Préparation Express</h4>
+							<p>Des recettes simples et rapides qui se préparent en moins de 10 minutes avec des ingrédients du quotidien.</p>
+						</article>
+						<article class="feature-card" role="listitem" data-aos="fade-up" data-aos-delay="200">
+							<div class="feature-icon">
+								<i class="fas fa-chart-line" aria-hidden="true"></i>
+							</div>
+							<h4>Résultats Garantis</h4>
+							<p>Suivez vos progrès et découvrez des recettes testées et approuvées par notre communauté d'experts.</p>
+						</article>
+						<article class="feature-card" role="listitem" data-aos="fade-up" data-aos-delay="300">
+							<div class="feature-icon">
+								<i class="fas fa-leaf" aria-hidden="true"></i>
+							</div>
+							<h4>100% Naturel</h4>
+							<p>Utilisez uniquement des ingrédients naturels, sans produits chimiques ni conservateurs nocifs.</p>
+						</article>
+					</div>
+				</div>
+			</section>
+
+			<!-- Recipes section -->
+			<section class="recipes" role="region" aria-labelledby="recipes-title">
+				<div class="container">
+					<header class="section-header">
+						<h3 id="recipes-title">Nos recettes vedettes</h3>
+						<p>Les créations les plus appréciées de notre communauté</p>
+					</header>
+					<div class="recipes-grid" role="list">
+						<article class="recipe-card featured" role="listitem" data-aos="zoom-in">
+							<div class="recipe-image">
+								<div class="recipe-overlay">
+									<button class="btn btn-small" type="button">Voir la recette</button>
+								</div>
+							</div>
+							<div class="recipe-content">
+								<div class="recipe-badge">Populaire</div>
+								<h4>Masque purifiant argile verte</h4>
+								<p>Purifie et équilibre les peaux mixtes à grasses</p>
+								<div class="recipe-meta">
+									<span><i class="fas fa-clock" aria-hidden="true"></i> 15 min</span>
+									<span><i class="fas fa-star" aria-hidden="true"></i> 4.8</span>
+									<span><i class="fas fa-users" aria-hidden="true"></i> 2.3k</span>
+								</div>
+							</div>
+						</article>
+						<article class="recipe-card" role="listitem" data-aos="zoom-in" data-aos-delay="100">
+							<div class="recipe-image">
+								<div class="recipe-overlay">
+									<button class="btn btn-small" type="button">Voir la recette</button>
+								</div>
+							</div>
+							<div class="recipe-content">
+								<div class="recipe-badge">Nouveau</div>
+								<h4>Sérum éclat vitamine C</h4>
+								<p>Illumine et unifie le teint</p>
+								<div class="recipe-meta">
+									<span><i class="fas fa-clock" aria-hidden="true"></i> 20 min</span>
+									<span><i class="fas fa-star" aria-hidden="true"></i> 4.9</span>
+									<span><i class="fas fa-users" aria-hidden="true"></i> 1.8k</span>
+								</div>
+							</div>
+						</article>
+						<article class="recipe-card" role="listitem" data-aos="zoom-in" data-aos-delay="200">
+							<div class="recipe-image">
+								<div class="recipe-overlay">
+									<button class="btn btn-small" type="button">Voir la recette</button>
+								</div>
+							</div>
+							<div class="recipe-content">
+								<div class="recipe-badge">Facile</div>
+								<h4>Gommage sucre et miel</h4>
+								<p>Exfolie en douceur et hydrate</p>
+								<div class="recipe-meta">
+									<span><i class="fas fa-clock" aria-hidden="true"></i> 10 min</span>
+									<span><i class="fas fa-star" aria-hidden="true"></i> 4.7</span>
+									<span><i class="fas fa-users" aria-hidden="true"></i> 3.1k</span>
+								</div>
+							</div>
+						</article>
+					</div>
+					<div class="recipes-cta">
+						<a href="creer-recette-test.html" class="btn btn-secondary">
+							Explorer toutes les recettes
+							<i class="fas fa-arrow-right" aria-hidden="true"></i>
+						</a>
+					</div>
+				</div>
+			</section>
+
+			<!-- Testimonials section -->
+			<section class="testimonials" role="region" aria-labelledby="testimonials-title">
+				<div class="container">
+					<header class="section-header">
+						<h3 id="testimonials-title">Ils nous font confiance</h3>
+						<p>Découvrez les témoignages de notre communauté</p>
+					</header>
+					<div class="testimonials-grid" role="list">
+						<blockquote class="testimonial-card" role="listitem" data-aos="fade-right">
+							<div class="testimonial-content">
+								<div class="testimonial-rating" aria-label="5 étoiles">★★★★★</div>
+								<p>"Les recettes sont incroyables ! J'ai enfin trouvé des soins qui respectent ma peau sensible et me donnent des résultats visibles."</p>
+								<footer class="testimonial-author">
+									<div class="author-avatar">
+										<i class="fas fa-user-circle" aria-hidden="true"></i>
+									</div>
+									<div class="author-info">
+										<cite>Assia L.</cite>
+										<span>Peau sensible</span>
+									</div>
+								</footer>
+							</div>
+						</blockquote>
+						<blockquote class="testimonial-card" role="listitem" data-aos="fade-up">
+							<div class="testimonial-content">
+								<div class="testimonial-rating" aria-label="5 étoiles">★★★★★</div>
+								<p>"Simple, efficace et économique. Je ne peux plus m'en passer ! L'application est intuitive et les résultats sont au rendez-vous."</p>
+								<footer class="testimonial-author">
+									<div class="author-avatar">
+										<i class="fas fa-user-circle" aria-hidden="true"></i>
+									</div>
+									<div class="author-info">
+										<cite>Dini E.</cite>
+										<span>Utilisatrice régulière</span>
+									</div>
+								</footer>
+							</div>
+						</blockquote>
+						<blockquote class="testimonial-card" role="listitem" data-aos="fade-left">
+							<div class="testimonial-content">
+								<div class="testimonial-rating" aria-label="5 étoiles">★★★★★</div>
+								<p>"L'application est intuitive et les résultats sont visibles dès la première semaine. J'ai pu créer des soins pour toute ma famille !"</p>
+								<footer class="testimonial-author">
+									<div class="author-avatar">
+										<i class="fas fa-user-circle" aria-hidden="true"></i>
+									</div>
+									<div class="author-info">
+										<cite>Julie M.</cite>
+										<span>Nouvelle utilisatrice</span>
+									</div>
+								</footer>
+							</div>
+						</blockquote>
+					</div>
+				</div>
+			</section>
+
+			<!-- CTA section -->
+			<section class="cta-section" role="region" aria-labelledby="cta-title">
+				<div class="container">
+					<div class="cta-content">
+						<h3 id="cta-title">Prêt à transformer votre routine beauté ?</h3>
+						<p>Rejoignez des milliers d'utilisateurs qui ont déjà découvert le pouvoir des soins naturels personnalisés</p>
+						<div class="cta-buttons">
+							<a href="creer-recette-test.html" class="btn btn-primary">
+								Commencer maintenant
+								<i class="fas fa-arrow-right" aria-hidden="true"></i>
+							</a>
+							<a href="#newsletter" class="btn btn-outline">
+								En savoir plus
+							</a>
+						</div>
+					</div>
+				</div>
+			</section>
 		</main>
 
-		<footer>
-			<div class="footer-links">
-				<p>Contact : <a href="mailto:contact@bioskin.com">contact@bioskin.com</a></p>
+		<!-- Footer -->
+		<footer class="footer" role="contentinfo">
+			<div class="container">
+				<div class="footer-content">
+					<div class="footer-brand">
+						<h4><i class="fas fa-leaf" aria-hidden="true"></i> BioSkin</h4>
+						<p>Votre partenaire beauté naturelle</p>
+						<div class="social-links">
+							<a href="#" aria-label="Suivez-nous sur Facebook"><i class="fab fa-facebook" aria-hidden="true"></i></a>
+							<a href="#" aria-label="Suivez-nous sur Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+							<a href="#" aria-label="Suivez-nous sur Twitter"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+						</div>
+					</div>
+					<nav class="footer-links" role="navigation" aria-label="Liens du pied de page">
+						<div class="footer-column">
+							<h5>Produit</h5>
+							<ul>
+								<li><a href="creer-recette-test.html">Créer une recette</a></li>
+								<li><a href="favoris.html">Mes favoris</a></li>
+								<li><a href="#">Types de peau</a></li>
+								<li><a href="#">Ingrédients</a></li>
+							</ul>
+						</div>
+						<div class="footer-column">
+							<h5>Support</h5>
+							<ul>
+								<li><a href="#">Centre d'aide</a></li>
+								<li><a href="#">Contact</a></li>
+								<li><a href="#">FAQ</a></li>
+								<li><a href="#">Communauté</a></li>
+							</ul>
+						</div>
+						<div class="footer-column">
+							<h5>Entreprise</h5>
+							<ul>
+								<li><a href="#">À propos</a></li>
+								<li><a href="#">Blog</a></li>
+								<li><a href="#">Carrières</a></li>
+								<li><a href="#">Presse</a></li>
+							</ul>
+						</div>
+					</nav>
+				</div>
+				<div class="footer-bottom">
+					<p>&copy; 2025 BioSkin. Tous droits réservés.</p>
+					<nav class="footer-legal" role="navigation" aria-label="Liens légaux">
+						<a href="#">Confidentialité</a>
+						<a href="#">Conditions</a>
+						<a href="#">Cookies</a>
+					</nav>
+				</div>
 			</div>
-			<p>&copy; 2025 BioSkin. Tous droits réservés.</p>
 		</footer>
+
+		<!-- Scripts -->
+		<script>
+			// Navigation mobile
+			const navToggle = document.getElementById('nav-toggle');
+			const navMenu = document.getElementById('nav-menu');
+
+			navToggle.addEventListener('click', () => {
+				const isExpanded = navToggle.getAttribute('aria-expanded') === 'true';
+				navToggle.setAttribute('aria-expanded', !isExpanded);
+				navMenu.classList.toggle('show');
+			});
+
+			// Animation au scroll
+			const observerOptions = {
+				threshold: 0.1,
+				rootMargin: '0px 0px -50px 0px'
+			};
+
+			const observer = new IntersectionObserver((entries) => {
+				entries.forEach(entry => {
+					if (entry.isIntersecting) {
+						entry.target.style.opacity = '1';
+						entry.target.style.transform = 'translateY(0)';
+					}
+				});
+			}, observerOptions);
+
+			document.querySelectorAll('[data-aos]').forEach(el => {
+				el.style.opacity = '0';
+				el.style.transform = 'translateY(30px)';
+				el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+				observer.observe(el);
+			});
+
+			// Smooth scroll
+			document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+				anchor.addEventListener('click', function (e) {
+					e.preventDefault();
+					const target = document.querySelector(this.getAttribute('href'));
+					if (target) {
+						target.scrollIntoView({
+							behavior: 'smooth',
+							block: 'start'
+						});
+					}
+				});
+			});
+
+			// Animation des statistiques
+			function animateCounter(element, target, duration = 2000) {
+				let start = 0;
+				const increment = target / (duration / 16);
+				
+				const timer = setInterval(() => {
+					start += increment;
+					if (start >= target) {
+						element.textContent = target;
+						clearInterval(timer);
+					} else {
+						element.textContent = Math.floor(start);
+					}
+				}, 16);
+			}
+
+			// Observer pour déclencher l'animation des stats
+			const statsObserver = new IntersectionObserver((entries) => {
+				entries.forEach(entry => {
+					if (entry.isIntersecting) {
+						const statElements = entry.target.querySelectorAll('.stat-number');
+						statElements.forEach(stat => {
+							const target = parseFloat(stat.getAttribute('data-target'));
+							animateCounter(stat, target);
+						});
+						statsObserver.unobserve(entry.target);
+					}
+				});
+			}, { threshold: 0.5 });
+
+			const heroStats = document.querySelector('.hero-stats');
+			if (heroStats) {
+				statsObserver.observe(heroStats);
+			}
+
+			// Animation des cartes flottantes
+			const floatingCards = document.querySelectorAll('.floating-card');
+			floatingCards.forEach((card, index) => {
+				card.style.animationDelay = `${index * 0.3}s`;
+			});
+
+			// Parallax effect pour le hero
+			window.addEventListener('scroll', () => {
+				const scrolled = window.pageYOffset;
+				const hero = document.querySelector('.hero');
+				if (hero) {
+					hero.style.transform = `translateY(${scrolled * 0.5}px)`;
+				}
+			});
+		</script>
 	</body>
 </html> 

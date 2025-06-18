@@ -367,6 +367,42 @@
 				card.classList.remove('hover');
 			});
 		});
+
+		// Gestion du bouton "Générer ma recette"
+		const generateButton = document.querySelector('.btn-primary');
+		generateButton.addEventListener('click', function(e) {
+			e.preventDefault();
+			
+			// Vérifier que les champs requis sont remplis
+			const skinType = document.querySelector('input[name="skin-type"]:checked');
+			const goals = document.querySelectorAll('input[name="goals"]:checked');
+			const ingredients = document.querySelectorAll('.ingredient-card');
+			
+			if (!skinType) {
+				alert('Veuillez sélectionner votre type de peau');
+				return;
+			}
+			
+			if (goals.length === 0) {
+				alert('Veuillez sélectionner au moins un objectif');
+				return;
+			}
+			
+			if (ingredients.length === 0) {
+				alert('Veuillez ajouter au moins un ingrédient');
+				return;
+			}
+			
+			// Animation de chargement
+			this.innerHTML = '<span class="btn-text">Génération en cours...</span>';
+			this.disabled = true;
+			
+			// Simuler un délai de génération
+			setTimeout(() => {
+				// Rediriger vers la page de recette générée
+				window.location.href = 'recette-generee.html';
+			}, 2000);
+		});
 	</script>
 
 	<style>
