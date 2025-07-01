@@ -1,57 +1,162 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Connectez-vous à BioSkin pour accéder à vos recettes personnalisées">
-    <title>Connexion - BioSkin</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Connexion</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
-<body>
-    <header>
-        <div class="logo">
-            <h1>BioSkin</h1>
+<body class="login-test">
+<section>
+    <div class="main-form-container">
+      <div id="form_section" class="form-container">
+        <div class="login-form form-wraper ">
+          <div>
+            <div class="form-title">
+              <h2>Connexion</h2>
+            </div>
+            <div class="input-group">
+              <div class="box">
+                <span>
+                  <input placeholder="E-mail ou numéro de téléphone" class="myInput" type="text" />
+                </span>
+              </div>
+            </div>
+            <div class="input-group" style="position:relative;">
+              <div class="box">
+                <span style="position:relative; display:flex; align-items:center;">
+                  <input placeholder="Mot de passe" class="myInput" type="password" id="login-password" style="padding-right:36px;" />
+                  <button type="button" id="toggle-login-password" style="position:absolute; right:8px; background:none; border:none; cursor:pointer; outline:none; padding:0;">
+                    <svg id="eye-icon-login" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#a98b68" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                  </button>
+                </span>
+              </div>
+            </div>
+            <div class="forget-password">
+              <a href="">Mot de passe oublié ?</a>
+            </div>
+            <div class="action-button">
+              <button>Se connecter</button>
+            </div>
+          </div>
         </div>
-        <nav>
-            <ul>
-                <li><a href="index.html">Accueil</a></li>
-                <li><a href="creer-recette.html">Créer votre recette</a></li>
-                <li><a href="favoris.html">Favoris</a></li>
-            </ul>
-        </nav>
-        <div class="user-icon">
-            <a href="profil.html">Mon profil</a>
+        <div class="signUp-form form-wraper">
+          <div>
+            <div class="form-title">
+              <h2>Créer un compte</h2>
+            </div>
+            <div class="input-group">
+              <div class="box">
+                <span>
+                  <input placeholder="Nom" class="myInput" type="text" />
+                </span>
+              </div>
+            </div>
+            <div class="input-group">
+              <div class="box">
+                <span>
+                  <input placeholder="E-mail ou numéro de téléphone" class="myInput" type="text" />
+                </span>
+              </div>
+            </div>
+            <div class="input-group" style="position:relative;">
+              <div class="box">
+                <span style="position:relative; display:flex; align-items:center;">
+                  <input placeholder="Mot de passe" class="myInput" type="password" id="signup-password" style="padding-right:36px;" />
+                  <button type="button" id="toggle-signup-password" style="position:absolute; right:8px; background:none; border:none; cursor:pointer; outline:none; padding:0;">
+                    <svg id="eye-icon-signup" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#a98b68" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                  </button>
+                </span>
+              </div>
+            </div>
+            <div class="input-group" style="position:relative;">
+              <div class="box">
+                <span style="position:relative; display:flex; align-items:center;">
+                  <input placeholder="Confirmer le mot de passe" class="myInput" type="password" id="signup-password-confirm" style="padding-right:36px;" />
+                  <button type="button" id="toggle-signup-password-confirm" style="position:absolute; right:8px; background:none; border:none; cursor:pointer; outline:none; padding:0;">
+                    <svg id="eye-icon-signup-confirm" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#a98b68" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                  </button>
+                </span>
+              </div>
+            </div>
+            <div class="action-button">
+              <button>S'inscrire</button>
+            </div>
+          </div>
         </div>
-    </header>
+      </div>
+      <div id="multiple-btn" class="bg-btn-container">
+        <div class="action-button">
+          <button>Connexion</button>
+        </div>
+        <div class="action-button">
+          <button>Créer un compte</button>
+        </div>
+      </div>
+  
+    </div>
+  </section>
 
-    <main class="login-page-wrapper">
-        <div class="login-container">
-            <h2>Bienvenue sur BioSkin</h2>
-            <p class="login-subtitle">Connectez-vous pour accéder à vos recettes personnalisées</p>
-            <p class="login-message">Vous devez être connecté pour accéder à cette fonctionnalité</p>
-            <form action="#" method="POST" class="login-form">
-                <div class="form-group">
-                    <input type="email" id="email" name="email" required placeholder="Votre email ou numéro de téléphone">
-                </div>
-                <div class="form-group">
-                    <label for="password">Mot de passe</label>
-                    <input type="password" id="password" name="password" required placeholder="Votre mot de passe">
-                </div>
-                <button type="submit" class="btn">Se connecter</button>
-                <div class="login-links">
-                    <a href="#" class="forgot-password">Mot de passe oublié ?</a>
-                    <a href="#" class="create-account">Créer un compte</a>
-                </div>
-            </form>
-        </div>
-    </main>
+  <script>
+    const inputs = document.querySelectorAll("input");
+    inputs.forEach(function (input) {
+      input.addEventListener("focus", function () {
+        const parentElement = input.parentElement.parentElement;
+        parentElement.classList.add("box-animation");
+      });
+      input.addEventListener("blur", function () {
+        const parentElement = input.parentElement.parentElement;
+        parentElement.classList.remove("box-animation");
+      });
+    });
 
-    <footer>
-        <div class="footer-links">
-            <p>Contact : <a href="mailto:contact@bioskin.com">contact@bioskin.com</a></p>
-        </div>
-        <p>&copy; 2025 BioSkin. Tous droits réservés.</p>
-    </footer>
+    const buttons = document.querySelectorAll("#multiple-btn button");
+    const form_container = document.getElementById('form_section')
+    buttons.forEach((button) => {
+      button.addEventListener("click", () => {
+        form_container.classList.toggle("left-right");
+      });
+    });
+
+    // Affichage/Masquage du mot de passe (connexion)
+    document.getElementById('toggle-login-password').addEventListener('click', function() {
+      const pwdInput = document.getElementById('login-password');
+      const eyeIcon = document.getElementById('eye-icon-login');
+      if (pwdInput.type === 'password') {
+        pwdInput.type = 'text';
+        eyeIcon.innerHTML = '<circle cx="12" cy="12" r="3"></circle><path d="M17.94 17.94A10.94 10.94 0 0 1 12 19c-7 0-11-7-11-7a21.81 21.81 0 0 1 5.06-6.06M1 1l22 22" stroke="#a98b68" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>';
+      } else {
+        pwdInput.type = 'password';
+        eyeIcon.innerHTML = '<path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z"></path><circle cx="12" cy="12" r="3"></circle>';
+      }
+    });
+
+    // Affichage/Masquage du mot de passe (création de compte)
+    document.getElementById('toggle-signup-password').addEventListener('click', function() {
+      const pwdInput = document.getElementById('signup-password');
+      const eyeIcon = document.getElementById('eye-icon-signup');
+      if (pwdInput.type === 'password') {
+        pwdInput.type = 'text';
+        eyeIcon.innerHTML = '<circle cx="12" cy="12" r="3"></circle><path d="M17.94 17.94A10.94 10.94 0 0 1 12 19c-7 0-11-7-11-7a21.81 21.81 0 0 1 5.06-6.06M1 1l22 22" stroke="#a98b68" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>';
+      } else {
+        pwdInput.type = 'password';
+        eyeIcon.innerHTML = '<path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z"></path><circle cx="12" cy="12" r="3"></circle>';
+      }
+    });
+    document.getElementById('toggle-signup-password-confirm').addEventListener('click', function() {
+      const pwdInput = document.getElementById('signup-password-confirm');
+      const eyeIcon = document.getElementById('eye-icon-signup-confirm');
+      if (pwdInput.type === 'password') {
+        pwdInput.type = 'text';
+        eyeIcon.innerHTML = '<circle cx="12" cy="12" r="3"></circle><path d="M17.94 17.94A10.94 10.94 0 0 1 12 19c-7 0-11-7-11-7a21.81 21.81 0 0 1 5.06-6.06M1 1l22 22" stroke="#a98b68" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>';
+      } else {
+        pwdInput.type = 'password';
+        eyeIcon.innerHTML = '<path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z"></path><circle cx="12" cy="12" r="3"></circle>';
+      }
+    });
+  </script>
 </body>
-</html>
+</html> 

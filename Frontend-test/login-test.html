@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Connexion Test</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="login-test">
+<section>
+    <div class="main-form-container">
+      <div id="form_section" class="form-container">
+        <div class="login-form form-wraper ">
+          <div>
+            <div class="form-title">
+              <h2>Connexion</h2>
+            </div>
+            <div class="input-group">
+              <div class="box">
+                <span>
+                  <input placeholder="E-mail ou numéro de téléphone" class="myInput" type="text" />
+                </span>
+              </div>
+            </div>
+            <div class="input-group">
+              <div class="box">
+                <span>
+                  <input placeholder="Mot de passe" class="myInput" type="password" />
+                </span>
+              </div>
+            </div>
+            <div class="forget-password">
+              <a href="">Mot de passe oublié ?</a>
+            </div>
+            <div class="action-button">
+              <button>Se connecter</button>
+            </div>
+          </div>
+        </div>
+        <div class="signUp-form form-wraper">
+          <div>
+            <div class="form-title">
+              <h2>Créer un compte</h2>
+            </div>
+            <div class="input-group">
+              <div class="box">
+                <span>
+                  <input placeholder="Nom" class="myInput" type="text" />
+                </span>
+              </div>
+            </div>
+            <div class="input-group">
+              <div class="box">
+                <span>
+                  <input placeholder="E-mail ou numéro de téléphone" class="myInput" type="text" />
+                </span>
+              </div>
+            </div>
+            <div class="input-group">
+              <div class="box">
+                <span>
+                  <input placeholder="Mot de passe" class="myInput" type="password" />
+                </span>
+              </div>
+            </div>
+            <div class="input-group">
+              <div class="box">
+                <span>
+                  <input placeholder="Confirmer le mot de passe" class="myInput" type="password" />
+                </span>
+              </div>
+            </div>
+            <div class="action-button">
+              <button>S'inscrire</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="multiple-btn" class="bg-btn-container">
+        <div class="action-button">
+          <button>Connexion</button>
+        </div>
+        <div class="action-button">
+          <button>Créer un compte</button>
+        </div>
+      </div>
+  
+    </div>
+  </section>
+
+  <script>
+    const inputs = document.querySelectorAll("input");
+    inputs.forEach(function (input) {
+      input.addEventListener("focus", function () {
+        const parentElement = input.parentElement.parentElement;
+        parentElement.classList.add("box-animation");
+      });
+      input.addEventListener("blur", function () {
+        const parentElement = input.parentElement.parentElement;
+        parentElement.classList.remove("box-animation");
+      });
+    });
+
+    const buttons = document.querySelectorAll("#multiple-btn button");
+    const form_container = document.getElementById('form_section')
+    buttons.forEach((button) => {
+      button.addEventListener("click", () => {
+        form_container.classList.toggle("left-right");
+      });
+    });
+  </script>
+</body>
+</html> 

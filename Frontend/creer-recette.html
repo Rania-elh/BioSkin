@@ -14,13 +14,13 @@
 		</div>
 		<nav>
 			<ul>
-				<li><a href="index-test.html">Accueil</a></li>
-				<li><a href="creer-recette-test.html" class="active">Créer votre recette</a></li>
-				<li><a href="favoris.html">Favoris</a></li>
+				<li><a href="index.html">Accueil</a></li>
+				<li><a href="creer-recette.html">Créer votre recette</a></li>
+				<li><a href="Favoris.html">Favoris</a></li>
 			</ul>
 		</nav>
 		<div class="user-icon">
-			<a href="login.html">Mon profil</a>
+			<a href="profil.html">Mon profil</a>
 		</div>
 	</header>
 
@@ -143,11 +143,18 @@
 						<p class="section-description">Ajoutez les ingrédients que vous avez chez vous</p>
 					</div>
 					<div class="ingredients-search">
-						<div class="search-container">
+						<div class="search-container" style="position:relative;">
 							<input type="text" id="ingredient-search" placeholder="Ajoutez vos ingrédients (ex: Aloe Vera, Huile d'Argan...)">
 							<button type="button" class="add-ingredient-btn">
 								<span>Ajouter</span>
 							</button>
+							<button type="button" id="show-ingredient-list" title="Voir les ingrédients de base" style="margin-left:8px; margin-top:10px; border-radius:10px; border:1.5px solid #a98b68; background:linear-gradient(101deg,#fff8ec,#f5f0e1); min-width:110px; height:38px; display:flex; align-items:center; justify-content:center; box-shadow:0 2px 8px rgba(139,115,85,0.10); cursor:pointer; font-size:1em; transition:background 0.2s, box-shadow 0.2s; font-weight:600; color:#a98b68; letter-spacing:0.5px; position:relative; overflow:hidden;">
+								<span style="flex:1; text-align:center;">Ingrédients</span>
+							</button>
+							<div id="ingredient-list-popup" style="display:none; position:absolute; z-index:10; background:white; border:1px solid #ccc; border-radius:10px; box-shadow:0 2px 12px rgba(0,0,0,0.18); padding:14px; top:45px; left:0; min-width:240px;">
+								<input type="text" id="ingredient-filter" placeholder="Filtrer..." style="width:100%; margin-bottom:10px; padding:6px; border-radius:5px; border:1px solid #eee;">
+								<ul id="ingredient-list" style="list-style:none; margin:0; padding:0; max-height:220px; overflow-y:auto;"></ul>
+							</div>
 						</div>
 						<div class="ingredients-list">
 							<!-- Les ingrédients seront ajoutés dynamiquement ici -->
@@ -334,10 +341,10 @@
 				};
 
 				ingredientCard.innerHTML = `
-					<div class="card-content">
-						<div class="card-header">
-							<h4>${ingredient}</h4>
-							<button type="button" class="remove-ingredient">×</button>
+					<div class="card-content" style="position:relative;">
+						<button type="button" class="remove-ingredient" style="position:absolute; top:8px; left:8px; background:none; border:none; color:#a98b68; font-size:1.3em; cursor:pointer; z-index:2; padding:0;">×</button>
+						<div class="card-header" style="padding-left:28px;">
+							<h4 style="margin:0;">${ingredient}</h4>
 						</div>
 						<div class="ingredient-benefits">
 							<h5>${benefits.title}</h5>
@@ -402,6 +409,48 @@
 				// Rediriger vers la page de recette générée
 				window.location.href = 'recette-generee.html';
 			}, 2000);
+		});
+
+		// Liste des ingrédients de base (élargie et triée)
+		const basicIngredients = [
+			"Aloe Vera", "Avocat", "Banane", "Beurre de karité", "Bicarbonate de soude", "Café", "Cannelle", "Carotte", "Citron", "Clou de girofle", "Concombre", "Curcuma", "Eau de rose", "Eau gazeuse", "Feuille de laurier", "Flocons d'avoine", "Hibiscus", "Huile d'amande douce", "Huile d'argan", "Huile de carotte", "Huile de coco", "Huile d'olive", "Huile de tournesol", "Lait", "Maizena", "Miel", "Moutarde douce", "Oeuf", "Pomme", "Pomme de terre", "Poudre d'amande", "Poudre de cacao", "Riz", "Sel", "Sirop d'érable", "Sucre blanc", "Sucre brun", "Thé vert", "Vinaigre de cidre", "Yaourt nature"
+		].sort((a, b) => a.localeCompare(b, 'fr', {sensitivity:'base'}));
+		const showListBtn = document.getElementById('show-ingredient-list');
+		const popup = document.getElementById('ingredient-list-popup');
+		const ingredientList = document.getElementById('ingredient-list');
+		const ingredientFilter = document.getElementById('ingredient-filter');
+
+		showListBtn.addEventListener('click', (e) => {
+			e.stopPropagation();
+			popup.style.display = popup.style.display === 'block' ? 'none' : 'block';
+			ingredientFilter.value = '';
+			renderIngredientList('');
+			ingredientFilter.focus();
+		});
+
+		document.addEventListener('click', (e) => {
+			if (!popup.contains(e.target) && e.target !== showListBtn) {
+				popup.style.display = 'none';
+			}
+		});
+
+		function renderIngredientList(filter) {
+			ingredientList.innerHTML = '';
+			basicIngredients.filter(ing => ing.toLowerCase().includes(filter.toLowerCase())).forEach(ingredient => {
+				const li = document.createElement('li');
+				li.textContent = ingredient;
+				li.style.cursor = 'pointer';
+				li.style.padding = '6px 0';
+				li.addEventListener('click', () => {
+					ingredientSearch.value = ingredient;
+					popup.style.display = 'none';
+					addIngredientBtn.click();
+				});
+				ingredientList.appendChild(li);
+			});
+		}
+		ingredientFilter.addEventListener('input', (e) => {
+			renderIngredientList(e.target.value);
 		});
 	</script>
 
@@ -732,6 +781,13 @@
 		.skin-type-card p, .goal-card p {
 			font-size: 0.85rem;
 		}
+	}
+
+	#show-ingredient-list:hover {
+		background:linear-gradient(101deg,#f5f0e1,#e6d5b8);
+		color:#8b7355;
+		box-shadow:0 4px 16px rgba(139,115,85,0.16);
+		border-color:#8b7355;
 	}
 	</style>
 </body>
