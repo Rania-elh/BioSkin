@@ -5,8 +5,8 @@ import json
 openai.api_key = os.getenv("OPENAI_API_KEY")
 
 class RecipeService:
-    def __init__(self):
-        pass
+    def __init__(self, db):
+        self.db = db
 
     def generate_recipe(self, skin_type, zone, goal, ingredients):
         prompt = f"""
