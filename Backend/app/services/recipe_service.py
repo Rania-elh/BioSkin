@@ -22,13 +22,17 @@ class RecipeService:
         """
 
         try:
-            response = openai.ChatCompletion.create(
-                model="gpt-3.5-turbo",
-                messages=[{"role": "user", "content": prompt}],
-                temperature=0.7
-            )
+            # Vérifie si ChatCompletion existe dans openai
+            if hasattr(openai, 'ChatCompletion'):
+                response = openai.ChatCompletion.create(
+                    model="gpt-3.5-turbo",
+                    messages=[{"role": "user", "content": prompt}],
+                    temperature=0.7
+                )
+                ai_reply = response["choices"][0]["message"]["content"]
+            else:
+                return {"error": "Votre version du module openai ne supporte pas ChatCompletion. Veuillez mettre à jour openai avec 'pip install --upgrade openai'"}
 
-            ai_reply = response["choices"][0]["message"]["content"]
             data = json.loads(ai_reply)
 
             data["zone"] = zone

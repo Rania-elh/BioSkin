@@ -5,7 +5,7 @@ from config import DevelopmentConfig
 
 # Import des blueprints
 from app.routes.user_routes import bp as user_bp
-from app.routes.favorites_routes import bp as favoris_bp
+from app.routes.favoris_routes import bp as favoris_bp
 from app.routes.ingredient_routes import bp as ingredient_bp
 from app.routes.recipe_routes import bp as recipe_bp
 

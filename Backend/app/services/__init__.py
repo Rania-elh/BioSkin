@@ -9,9 +9,9 @@ from .ia_services import (
     choose_random_recipe
 )
 from .favoris_service import (
-    add_favorite,
-    get_favorites_by_user,
-    remove_favorite
+    add_favori,
+    get_favoris_by_user,
+    remove_favori
 )
 from .ingredient_service import (
     get_all_ingredients,

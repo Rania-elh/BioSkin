@@ -12,7 +12,7 @@ db = client["bioskin"]
 # Exemple d'accès à une collection
 users_collection = db["users"]
 recipes_collection = db["recipes"]
-favorites_collection = db["favorites"]
+favoris_collection = db["favoris"]
 ingredients_collection = db["ingredients"]
 zone_collection = db["zone"]
 skin_types_collection = db["skin_type"]
